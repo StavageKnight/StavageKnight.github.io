@@ -49,7 +49,7 @@
       if (document.images) {
         var avatar = new Image();
         avatar.src = '/imgs/avatar.jpg'
-        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg'.split(',')
         var previewsPreLoad = []
         for(var i = 0; i < length; i++) {
           previewsPreLoad.push(new Image())
@@ -101,18 +101,17 @@
             </button>
             <a href="http://example.com">
                 
+                <!-- 这里background使用imgs/${logo_image}(路径文件名) -->
                 <style>
                     #gal-header .navbar-brand {
-                        height: 54px;
-                        line-height: 24px;
-                        font-size: 28px;
-                        opacity: 1;
-                        background-color: rgba(0,0,0,0);
-                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                        width: 200px;
+                        height: 50px;
+                        display: block;
+                        background: url('/imgs/logo.jpg') no-repeat;
                     }
                 </style>
-                <!-- 这里使用文字(navbar_text or config.title) -->
-                <div class="navbar-brand">Stavage</div>
+                    
+                <div class="navbar-brand"></div>
                 
             </a>
         </div>
@@ -200,6 +199,16 @@
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
                     
+<div class="alert well fade in" id="gal-issue" role="alert">
+    <!-- TODO 添加关闭公告框功能 -->
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <!-- 这里自行配置公告内容 -->
+    这里是公告
+    <br>
+    欢迎来到Stavage的博客
+    <!-- 自行配置公告内容结束 -->
+</div>
+
 <div id="article-list">
      
      
@@ -239,7 +248,7 @@
                 <a href="/2024/11/08/%E7%AE%97%E6%B3%95/">
                     <div class="img">
                         
-                        <img src="/imgs/preview/preview1.jpg" alt="算法">
+                        <img src="/imgs/preview/preview3.jpg" alt="算法">
                     </div>
                     <div class="info">
                         
@@ -278,7 +287,7 @@
             <p style="text-align: center;">
                 <a href="/2024/11/08/%E7%AE%97%E6%B3%95/">
                     
-                    <img src="/imgs/preview/preview4.jpg" alt="算法">
+                    <img src="/imgs/preview/preview2.jpg" alt="算法">
                 </a>
             </p>
         </div>
@@ -326,7 +335,7 @@
                 <a href="/2024/11/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2/">
                     <div class="img">
                         
-                        <img src="/imgs/preview/preview4.jpg" alt="我的第一次博客">
+                        <img src="/imgs/preview/preview2.jpg" alt="我的第一次博客">
                     </div>
                     <div class="info">
                         
@@ -365,7 +374,7 @@
             <p style="text-align: center;">
                 <a href="/2024/11/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2/">
                     
-                    <img src="/imgs/preview/preview1.jpg" alt="我的第一次博客">
+                    <img src="/imgs/preview/preview4.jpg" alt="我的第一次博客">
                 </a>
             </p>
         </div>
@@ -431,18 +440,6 @@
             <p class="author-description"><p>My personal blog</p>
 </p>
         </div>
-    </div>
-</aside>
-    
-    <aside id="sidebar-recent_comments">
-    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
-        <div class="panel-heading">
-            <i class="fa fa-comments"></i>
-            最新评论
-            <i class="fa fa-times-circle panel-remove"></i>
-            <i class="fa fa-chevron-circle-up panel-toggle"></i>
-        </div>
-        <ul class="list-group list-group-flush"></ul>
     </div>
 </aside>
     
@@ -528,9 +525,9 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Tset/" style="font-size: 17.31733036214805px;" class="tag-cloud-link">Tset</a>
+    <a href="/tags/Tset/" style="font-size: 9.868739422213375px;" class="tag-cloud-link">Tset</a>
     
-    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 16.77033539202028px;" class="tag-cloud-link">模板</a>
+    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10.885810117993227px;" class="tag-cloud-link">模板</a>
     
 </div>
                 
@@ -538,15 +535,7 @@
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
     
     <li>
-        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
-    </li>
-    
-    <li>
         <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
-    </li>
-    
-    <li>
-        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
     </li>
     
 </div>

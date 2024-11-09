@@ -49,7 +49,7 @@
       if (document.images) {
         var avatar = new Image();
         avatar.src = '/imgs/avatar.jpg'
-        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg'.split(',')
         var previewsPreLoad = []
         for(var i = 0; i < length; i++) {
           previewsPreLoad.push(new Image())
@@ -101,18 +101,17 @@
             </button>
             <a href="http://example.com">
                 
+                <!-- 这里background使用imgs/${logo_image}(路径文件名) -->
                 <style>
                     #gal-header .navbar-brand {
-                        height: 54px;
-                        line-height: 24px;
-                        font-size: 28px;
-                        opacity: 1;
-                        background-color: rgba(0,0,0,0);
-                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                        width: 200px;
+                        height: 50px;
+                        display: block;
+                        background: url('/imgs/logo.jpg') no-repeat;
                     }
                 </style>
-                <!-- 这里使用文字(navbar_text or config.title) -->
-                <div class="navbar-brand">Stavage</div>
+                    
+                <div class="navbar-brand"></div>
                 
             </a>
         </div>
@@ -288,18 +287,6 @@
     </div>
 </aside>
     
-    <aside id="sidebar-recent_comments">
-    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
-        <div class="panel-heading">
-            <i class="fa fa-comments"></i>
-            最新评论
-            <i class="fa fa-times-circle panel-remove"></i>
-            <i class="fa fa-chevron-circle-up panel-toggle"></i>
-        </div>
-        <ul class="list-group list-group-flush"></ul>
-    </div>
-</aside>
-    
     <!-- 要配置好leancloud才能开启此小工具 -->
     
     
@@ -382,9 +369,9 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Tset/" style="font-size: 12.897631811933332px;" class="tag-cloud-link">Tset</a>
+    <a href="/tags/Tset/" style="font-size: 15.871824353098296px;" class="tag-cloud-link">Tset</a>
     
-    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 12.359317339921976px;" class="tag-cloud-link">模板</a>
+    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 9.017868312956935px;" class="tag-cloud-link">模板</a>
     
 </div>
                 
@@ -392,15 +379,7 @@
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
     
     <li>
-        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
-    </li>
-    
-    <li>
         <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
-    </li>
-    
-    <li>
-        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
     </li>
     
 </div>
