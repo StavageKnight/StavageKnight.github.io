@@ -273,7 +273,77 @@
 <h1 id="系统规划"><a href="#系统规划" class="headerlink" title="系统规划"></a>系统规划</h1><p>系统规划是指定系统的长期发展方案，决定系统在整个生命周期内的发展方向，规模和发展进程。是生命周期的第一阶段</p>
 <p>特点：周期长，投资大，不确定性，结构化低，全局性，面向高层是管理决策过程，不宜过细，着眼子系统划分，与企业规划同步，不针对部门</p>
 <p>步骤：对当前系统进行初步调查，分析和确定新系统目标，分析子系统组成和功能，拟定系统实施方案，进行可行性研究</p>
-<p>系统规划模型：诺兰模型</p>
+<p>系统规划模型：诺兰模型（初装，蔓延，控制，集成，数据管理，成熟）</p>
+<h5 id="CMM模型"><a href="#CMM模型" class="headerlink" title="CMM模型"></a>CMM模型</h5><p>用来评估组织的信息系统开发以及管理过程和产品成熟度等级的框架，由五个开发等级，用一组被称为关键过程领域的指导方针进行度量</p>
+<p>1级（初始级）——<u>建立项目纪律</u>——2级（管理级）——<u>稳定一致的过程</u>——3级（定义级）——<u>以事实为依据</u>——4级（定量级）——<u>能够持续改进</u>——5级（优化级）</p>
+<p>战略集转换法——SST：把整个战略目标看成是一个“信息集合”，由使命，目标，战略和其他战略变量等组成，MIS的战略规划过程是把组织的战略目标转化为管理信息系统战略目标的方法</p>
+<p>关键成功因素法——CSF：通过分析找出使得企业成功的关键因素，然后再围绕这些关键因素来确定系统的需求，并进行规划</p>
+<p>企业系统规划法——BSP：为指导企业管理信息系统的开发而建立的规范方法。用于企业内部系统开发。自上而下识别系统目标，识别企业的过程，识别数据，然后再自下而上地设计系统目标，最后把企业目标转为信息系统规划地全过程</p>
+<p>UC：	完备性检验，每个数据类必须有一个生产者C和至少一个使用者U，每个功能必须有产生或使用（U或C）数据类型</p>
+<p>​			一致性检验：每个数据类必须有且仅有一个产生者C</p>
+<p>​			无冗余性检验：指U&#x2F;C矩阵中不允许有空行或空列</p>
+<h1 id="系统分析"><a href="#系统分析" class="headerlink" title="系统分析"></a>系统分析</h1><p>需求：个体客观或主观上的一种诉求。一般源自于用户理想上与现实的差距所致</p>
+<p>刚需：某一类人的必要要求</p>
+<p>需求的分类——层次角度：业务需求（最高层次目标，描述了组织为什么要开发系统），用户需求（描述了系统能够帮助用户做些什么），系统需求（可以直接映射为系统行为，定义了系统中需要实现的功能，描述了开发人员需要实现什么）</p>
+<p>需求的分类——功能性角度：功能需求（表现为系统和环境之间的行为交互），性能需求，质量属性，约束条件，接口</p>
+<p>系统分析：系统分析将一个系统分解成各个组成成分，目的是研究各部分如何工作，如何交互，以实现系统的目标。是问题解决技术</p>
+<p>需求获取来源：涉众，硬数据，重要文档，相关技术标准和法规，相关产品</p>
+<p>硬数据：定量硬数据（数据收集表格，统计报表），定性硬数据</p>
+<p>需求获取的方法：面谈法（面谈结构：金字塔，漏斗，菱形），问卷，原型法，观察法，文档审查</p>
+<p>需求分析流程：业务分析，需求建模（DFD，ERD，活动图等），需求细化，确定优先级，需求协商</p>
+<h5 id="业务流程图"><a href="#业务流程图" class="headerlink" title="业务流程图"></a>业务流程图</h5><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241202230138721.png" alt="image-20241202230138721"></p>
+<h5 id="系统流程图"><a href="#系统流程图" class="headerlink" title="系统流程图"></a>系统流程图</h5><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241202232455919.png" alt="image-20241202232455919"></p>
+<h5 id="数据流图"><a href="#数据流图" class="headerlink" title="数据流图"></a>数据流图</h5><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241202233433669.png" alt="image-20241202233433669"></p>
+<p>面向对象三大特征：封装性，继承性，多态性</p>
+<p>三大类十种图：</p>
+<p>用例模型图（功能模型）：有用例图组成</p>
+<p>静态模型图（对象模型）：类图，包图，对象图，构件图，配置图</p>
+<p>动态模型图（行为模型包括交互，状态模型）：活动图，状态图，顺序图，合作图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203015125399.png" alt="image-20241203015125399"></p>
+<h4 id="用例图（小人那个）"><a href="#用例图（小人那个）" class="headerlink" title="用例图（小人那个）"></a>用例图（小人那个）</h4><p>优秀的需求文档：完备性，一致性，根据重要性和稳定性分级，可修改，可跟踪</p>
+<p>需求验证方法：评审，原型与模型，开发测试用例，用户手册编制，利用跟踪关系，自动化分析</p>
+<p>需求基线：已通过正式评审和批准的规格说明或产品，可作为进一步开发的基础，且只有通过正式的变更控制过程才能修改它</p>
+<h1 id="面向对象设计"><a href="#面向对象设计" class="headerlink" title="面向对象设计"></a>面向对象设计</h1><p>类的分类——边界类（用户界面类，系统和设备接口类），控制类，实体类、</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203001214772.png" alt="image-20241203001214772"></p>
+<p>这个是边界类，控制类则是在圆上有个箭头，实体类是圆下面有个线（像旦）</p>
+<p>类之间的关联：建立实例连接，消息传递，筛选对象间的关联</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203002015082.png" alt="image-20241203002015082"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203004155415.png" alt="image-20241203004155415"></p>
+<p>消息：从一个对象向另一个或几个其他对象发送信号，或由一个对象调用另一个对象的操作。是对象之间在一次交互中所传送的消息</p>
+<p>组成：发送者，接收者，活动</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203005326935.png" alt="image-20241203005326935"></p>
+<h5 id="顺序图"><a href="#顺序图" class="headerlink" title="顺序图"></a>顺序图</h5><p>用来描述对象间的交互行为</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203011332426.png" alt="image-20241203011332426"></p>
+<h5 id="写作图"><a href="#写作图" class="headerlink" title="写作图"></a>写作图</h5><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203011127529.png" alt="image-20241203011127529"></p>
+<h5 id="活动图"><a href="#活动图" class="headerlink" title="活动图"></a>活动图</h5><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203012149371.png" alt="image-20241203012149371"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203012504555.png" alt="image-20241203012504555"></p>
+<h5 id="状态图"><a href="#状态图" class="headerlink" title="状态图"></a>状态图</h5><p>描述系统中某些对象所具有的各种状态，和该对象从一种状态到另一种状态的转移，以及影响对象这些状态的事件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203012546984.png" alt="image-20241203012546984"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203013215393.png" alt="image-20241203013215393"></p>
+<h5 id="构建图"><a href="#构建图" class="headerlink" title="构建图"></a>构建图</h5><p>物理方面建模时要用的两种图之一，说明构件之间的逻辑实现</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203013453624.png" alt="image-20241203013453624"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203013749556.png" alt="image-20241203013749556"></p>
+<h5 id="部署图-配置图"><a href="#部署图-配置图" class="headerlink" title="部署图&#x2F;配置图"></a>部署图&#x2F;配置图</h5><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203013654574.png" alt="image-20241203013654574"></p>
+<h5 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h5><p>七种不良设计：僵硬，脆弱，低复用，高粘度，无端复杂性，无端复制，晦涩</p>
+<p>七种设计模式原则：</p>
+<ol>
+<li><p>单一职责原则SRP——一个设计元素只做一件事</p>
+</li>
+<li><p>开放-封闭原则OPC——系统中的可变性因素都封装起来</p>
+</li>
+<li><p>里氏代换（Liskov）原则LSP——一个派生类完全代替一个基类</p>
+</li>
+<li><p>依赖倒置原则DIP——改掉过程化的高层依赖低层，变成细节依赖抽象</p>
+</li>
+<li><p>接口隔离原则ISP——尽量提供小接口</p>
+</li>
+<li><p>优先使用组合而不是继承原则（合成复用原则）CRP——希望低耦合</p>
+</li>
+<li><p>迪米特原则LoD——最少知识原则</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203014535715.png" alt="image-20241203014535715"></p>
+</li>
+</ol>
 
     </div>
 </article>
@@ -439,13 +509,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Tset/" style="font-size: 14.909410825970646px;" class="tag-cloud-link">Tset</a>
+    <a href="/tags/Tset/" style="font-size: 11.778769758356434px;" class="tag-cloud-link">Tset</a>
     
-    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 17.371959104325235px;" class="tag-cloud-link">模板</a>
+    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 15.222268909370097px;" class="tag-cloud-link">模板</a>
     
-    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 13.086957767873596px;" class="tag-cloud-link">介绍</a>
+    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 14.758655100850637px;" class="tag-cloud-link">介绍</a>
     
-    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 14.863821825170575px;" class="tag-cloud-link">笔记</a>
+    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 19.107661106394534px;" class="tag-cloud-link">笔记</a>
     
 </div>
                 
