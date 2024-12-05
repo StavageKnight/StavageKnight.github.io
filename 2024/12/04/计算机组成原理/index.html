@@ -12,7 +12,7 @@
     
     
     
-    <title>archive_a | Stavage</title>
+    <title>计算机组成原理 | Stavage</title>
     <link href="http://example.com" rel="prefetch" />
 
     
@@ -128,7 +128,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -211,19 +211,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-archive">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://example.com">Stavage</a>
         >
-        <span>归档</span>
+        <span>计算机组成原理</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/archives">归档</a>
+                <a href="/2024/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-12-04
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -231,51 +246,57 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/archives">归档</a>
+                    <a href="/2024/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-12-04
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+                
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        
-        
-            <h1 style="font-size: 24px; margin-top: 40px;">2024年</h1>
-            
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-             
-             
-                        <a href="/2024/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
-                        <br>
-            
-             
-                        <a href="/2024/12/01/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">系统分析与设计</a>
-                        <br>
-            
-             
-                        <a href="/2024/11/26/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
-                        <br>
-            
-             
-                        <a href="/2024/11/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-                        <br>
-            
-             
-                        <a href="/2024/11/14/Atcoder/">Atcoder</a>
-                        <br>
-            
-             
-                        <a href="/2024/11/08/%E7%AE%97%E6%B3%95/">算法</a>
-                        <br>
-            
-             
-                        <a href="/2024/11/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2/">我的第一次博客</a>
-                        <br>
-            
-                    </div>
-        
+    <div class="content-article">
+        <h1 id="输入输出系统"><a href="#输入输出系统" class="headerlink" title="输入输出系统"></a>输入输出系统</h1><p>组成：I&#x2F;O软件，I&#x2F;O硬件</p>
+<p>三种方式：程序查询方式，程序中断方式，DMA方式</p>
+<h1 id="计算机的运算方法"><a href="#计算机的运算方法" class="headerlink" title="计算机的运算方法"></a>计算机的运算方法</h1><p>+0和-0的补码相同都是0，0000</p>
+<h5 id="浮点数表示"><a href="#浮点数表示" class="headerlink" title="浮点数表示"></a>浮点数表示</h5><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241205181145495.png" alt="image-20241205181145495"></p>
+<p>规格化之后：<br><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241205182027614.png" alt="image-20241205182027614"></p>
+<p>IEEE 754标准</p>
+<p>单精度浮点数字长32位，尾数长度23，指数长度8，指数偏移量127</p>
+<p>双精度浮点数字长64位，尾数长度52，指数长度11，指数偏移量1023</p>
+<p>约定小数点左边隐含有一位，通常这位数是1，所以单精度尾数长度实际为24（默认省略小数点左边的1则为23），双精度尾数长度实际为54（默认省略小数点左边的1则为53）</p>
+<h5 id="定点运算"><a href="#定点运算" class="headerlink" title="定点运算"></a>定点运算</h5><p>算术移位规则（有符号位时，符号位不变）：</p>
+<p>正数的原码，补码，反码均用0填充，负数中原码用0填充，补码时左移填0，右移填1，反码用1填充</p>
+<h5 id="浮点四则运算"><a href="#浮点四则运算" class="headerlink" title="浮点四则运算"></a>浮点四则运算</h5><p>需要两位符号位</p>
+<p>先看是否右规，再看是否左规（只做一种）</p>
+<p>右规，但符号位出现10或01时采用，阶码加1；左规，符号位和第一个数位相同开始左规直至不同，阶码减1</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241205211031696.png" alt="image-20241205211031696"></p>
+<h1 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h1><p>寻址方式</p>
+<ol>
+<li>指令寻址</li>
+<li>数据寻址——约定：指令字长&#x3D;存储字长&#x3D;机器字长{1.立即寻址，2.直接寻址，3.隐含寻址，4.间接寻址，5.寄存器寻址，6.寄存器间接寻址，7.基址寻址，8.变址寻址，9.相对寻址，10.堆栈寻址}</li>
+</ol>
+<h1 id="CPU的结构和功能"><a href="#CPU的结构和功能" class="headerlink" title="CPU的结构和功能"></a>CPU的结构和功能</h1><p>指令周期：取出并执行一条指令所需的全部时间（取指，分析（取值周期），执行（执行周期））</p>
+<p>吞吐率：单位时间内流水线所完成指令或输出结果的数量</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241205220811886.png" alt="image-20241205220811886"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241205220827064.png" alt="image-20241205220827064"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241205220902830.png" alt="image-20241205220902830"></p>
+<h1 id="控制单元的分析与设计"><a href="#控制单元的分析与设计" class="headerlink" title="控制单元的分析与设计"></a>控制单元的分析与设计</h1><p>指令周期：取出并执行一条指令所需的全部时间</p>
+<p>机器周期：控制器设定的标准机器操作周期值</p>
+<p>时钟周期：完成一个基本的数据传递操作所需的时间值</p>
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -430,17 +451,17 @@
 
                 
                 <li>
-                    <a href="/archives/2024/11/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2024/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/archives/2024/11/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2024/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/archives/2024/11/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2024/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -448,13 +469,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Tset/" style="font-size: 12.149670077355289px;" class="tag-cloud-link">Tset</a>
+    <a href="/tags/Tset/" style="font-size: 14.564302844532644px;" class="tag-cloud-link">Tset</a>
     
-    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 17.137362949617625px;" class="tag-cloud-link">模板</a>
+    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 16.843512355051388px;" class="tag-cloud-link">模板</a>
     
-    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 14.970177256619px;" class="tag-cloud-link">介绍</a>
+    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 9.97441640539381px;" class="tag-cloud-link">介绍</a>
     
-    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 11.538775129988306px;" class="tag-cloud-link">笔记</a>
+    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 9.645783009032275px;" class="tag-cloud-link">笔记</a>
     
 </div>
                 
