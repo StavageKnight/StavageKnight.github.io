@@ -361,6 +361,21 @@
 <p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241210221032754.png" alt="image-20241210221032754"></p>
 <p>连接件的抽象定义：设论域为U，构件是一个软件体系结构，连接件是一个软件体系结构，构件经有限次连接（运算）后是软件体系结构，软件体系结构记为A&#x3D;&lt; C，O &gt;，其中C表示组成体系结构的构件的集合，0表示构件运算的集合</p>
 <p>性质：封闭性（<strong>即构件与构件、构件与体系结构、体系结构与体系结构连接后仍是一个体系结构</strong>），层次性（<strong>即构件与构件、构件与体系结构、体系结构与体系结构连接后仍是一个体系结构</strong>），可扩充性（<strong>即一个满足条件的新构件可以通过连接加入到结构中</strong>）</p>
+<h1 id="软件体系结构风格"><a href="#软件体系结构风格" class="headerlink" title="软件体系结构风格"></a>软件体系结构风格</h1><p>软件体系结构风格是描述某一特定应用领域中系统组织方式的惯用模式，反映了众多系统所共有的结构和语义特性，指导如何将各个模块和子系统有效地组织成一个完整的系统</p>
+<p>控制原则（根本）和质量属性（表现）区分了风格</p>
+<h5 id="管道过滤器风格"><a href="#管道过滤器风格" class="headerlink" title="管道过滤器风格"></a>管道过滤器风格</h5><p>优点：构件间耦合关系降低，易于分解问题，实现重用，易于维护和扩展，为系统的运行分析提供便携条件，支持并发计算</p>
+<p>缺点：在复杂应用问题中适用受限，数据解析、合成代价高，全局性能优化困难</p>
+<p>扩展形式：管线，有界管道，批处理</p>
+<h5 id="数据抽象和面向对象组织"><a href="#数据抽象和面向对象组织" class="headerlink" title="数据抽象和面向对象组织"></a>数据抽象和面向对象组织</h5><p>优点：封装性、继承和多态，便于重用，可实现交互，易于理解和建模</p>
+<p>缺点：调用使得修改被传播，设计复杂性增加，对象开销和消息传递导致的性能问题</p>
+<h5 id="事件驱动风格"><a href="#事件驱动风格" class="headerlink" title="事件驱动风格"></a>事件驱动风格</h5><p>优点：实时处理和响应能力强，松耦合，为系统改进提供方便</p>
+<p>缺点：系统逻辑关系复杂，弱化了对系统计算的控制能力，调试困难，有数据共享的负担</p>
+<h5 id="分层系统"><a href="#分层系统" class="headerlink" title="分层系统"></a>分层系统</h5><p>工作机制：每个层次为上一层提供服务，它同时作为用户调用下层的功能，严格的分层，半透明的分层</p>
+<p>优点：支持基于抽象程度递增的系统设计，良好的扩展性，支持重用</p>
+<p>缺点：层次划分困难，适用性受限</p>
+<h5 id="仓库系统及知识库（数据共享）"><a href="#仓库系统及知识库（数据共享）" class="headerlink" title="仓库系统及知识库（数据共享）"></a>仓库系统及知识库（数据共享）</h5><p>要素：两类构件：中央数据单元，外部构件；控制策略：两类构件间的交互方式</p>
+<p>分类：传统数据库型（被动），黑板系统（主动）</p>
+<h5 id="C2"><a href="#C2" class="headerlink" title="C2"></a>C2</h5><p>特点：基底独立性，构件只见交互只能通过消息传递实现，多线程</p>
 
     </div>
 </article>
@@ -550,13 +565,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Tset/" style="font-size: 9.582200666963598px;" class="tag-cloud-link">Tset</a>
+    <a href="/tags/Tset/" style="font-size: 15.701069286014082px;" class="tag-cloud-link">Tset</a>
     
-    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 19.400663738758357px;" class="tag-cloud-link">模板</a>
+    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 13.145864820242181px;" class="tag-cloud-link">模板</a>
     
-    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 8.10408614566876px;" class="tag-cloud-link">介绍</a>
+    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 10.594215386668829px;" class="tag-cloud-link">介绍</a>
     
-    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 14.905135226943193px;" class="tag-cloud-link">笔记</a>
+    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 12.344549213995158px;" class="tag-cloud-link">笔记</a>
     
 </div>
                 
