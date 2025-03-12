@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Stavage">
+    
+    <meta name="description" content="My personal blog">
+    
+    
+    
+    
+    
+    
+    <title>系统分析与设计 | Stavage</title>
+    <link href="http://example.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="http://example.com" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://example.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">Stavage</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E6%AF%94%E8%B5%9B/">比赛</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0s-d/">学习s&#39;d</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/categories">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Tset/">Tset</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E6%A8%A1%E6%9D%BF/">模板</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E4%BB%8B%E7%BB%8D/">介绍</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">Stavage</a>
+        >
+        <span>系统分析与设计</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2024/12/01/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">系统分析与设计</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-12-01
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2024/12/01/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">系统分析与设计</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-12-01
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><p>系统是一组为实现某些结果按一定方式进行相互联系，相互作用的部件的集合体</p>
+<p>系统的特性：整体性（系统是一个整体，不是各个要素的简单相加，它的整体功能是各要素在孤立状态下所没有的——<strong>系统最基本的特性</strong>），目的性（任何系统都具有某种目的，都要实现一定的功能，这也正是区别不同系统的<strong>标志</strong>），相关性（系统内各部分之间存在着相互依赖和相互制约的特定关系，某部分的变化会影响其他部分的实现功能），环境适应性（系统具有适应环境化，保持原有功能的特性），层次性（子系统，各层有独立功能）</p>
+<p>系统分析：对一种业务问题域的学习活动，能够在系统解决方案中为提升系统性能和明确业务需求提供良好的建议（理解问题域）</p>
+<p>系统设计：是对系统分析中已确定的业务希求的说明或者构建一种相关技术的解决方案（求可行解）</p>
+<p>五大模型：瀑布模型，快速原型模型，增量模型，螺旋模型，喷泉模型</p>
+<p>DecOps：是实践方法，高质量下缩短系统变更从提交到部署至生产环境的时间</p>
+<h1 id="系统规划"><a href="#系统规划" class="headerlink" title="系统规划"></a>系统规划</h1><p>系统规划是指定系统的长期发展方案，决定系统在整个生命周期内的发展方向，规模和发展进程。是生命周期的第一阶段</p>
+<p>特点：周期长，投资大，不确定性，结构化低，全局性，面向高层是管理决策过程，不宜过细，着眼子系统划分，与企业规划同步，不针对部门</p>
+<p>步骤：对当前系统进行初步调查，分析和确定新系统目标，分析子系统组成和功能，拟定系统实施方案，进行可行性研究</p>
+<p>系统规划模型：诺兰模型（初装，蔓延，控制，集成，数据管理，成熟）</p>
+<h5 id="CMM模型"><a href="#CMM模型" class="headerlink" title="CMM模型"></a>CMM模型</h5><p>用来评估组织的信息系统开发以及管理过程和产品成熟度等级的框架，由五个开发等级，用一组被称为关键过程领域的指导方针进行度量</p>
+<p>1级（初始级）——<u>建立项目纪律</u>——2级（管理级）——<u>稳定一致的过程</u>——3级（定义级）——<u>以事实为依据</u>——4级（定量级）——<u>能够持续改进</u>——5级（优化级）</p>
+<p>战略集转换法——SST：把整个战略目标看成是一个“信息集合”，由使命，目标，战略和其他战略变量等组成，MIS的战略规划过程是把组织的战略目标转化为管理信息系统战略目标的方法</p>
+<p>关键成功因素法——CSF：通过分析找出使得企业成功的关键因素，然后再围绕这些关键因素来确定系统的需求，并进行规划</p>
+<p>企业系统规划法——BSP：为指导企业管理信息系统的开发而建立的规范方法。用于企业内部系统开发。自上而下识别系统目标，识别企业的过程，识别数据，然后再自下而上地设计系统目标，最后把企业目标转为信息系统规划地全过程</p>
+<p>UC：	完备性检验，每个数据类必须有一个生产者C和至少一个使用者U，每个功能必须有产生或使用（U或C）数据类型</p>
+<p>​			一致性检验：每个数据类必须有且仅有一个产生者C</p>
+<p>​			无冗余性检验：指U&#x2F;C矩阵中不允许有空行或空列</p>
+<h1 id="系统分析"><a href="#系统分析" class="headerlink" title="系统分析"></a>系统分析</h1><p>需求：个体客观或主观上的一种诉求。一般源自于用户理想上与现实的差距所致</p>
+<p>刚需：某一类人的必要要求</p>
+<p>需求的分类——层次角度：业务需求（最高层次目标，描述了组织为什么要开发系统），用户需求（描述了系统能够帮助用户做些什么），系统需求（可以直接映射为系统行为，定义了系统中需要实现的功能，描述了开发人员需要实现什么）</p>
+<p>需求的分类——功能性角度：功能需求（表现为系统和环境之间的行为交互），性能需求，质量属性，约束条件，接口</p>
+<p>系统分析：系统分析将一个系统分解成各个组成成分，目的是研究各部分如何工作，如何交互，以实现系统的目标。是问题解决技术</p>
+<p>需求获取来源：涉众，硬数据，重要文档，相关技术标准和法规，相关产品</p>
+<p>硬数据：定量硬数据（数据收集表格，统计报表），定性硬数据</p>
+<p>需求获取的方法：面谈法（面谈结构：金字塔，漏斗，菱形），问卷，原型法，观察法，文档审查</p>
+<p>需求分析流程：业务分析，需求建模（DFD，ERD，活动图等），需求细化，确定优先级，需求协商</p>
+<h5 id="业务流程图"><a href="#业务流程图" class="headerlink" title="业务流程图"></a>业务流程图</h5><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241202230138721.png" alt="image-20241202230138721"></p>
+<h5 id="系统流程图"><a href="#系统流程图" class="headerlink" title="系统流程图"></a>系统流程图</h5><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241202232455919.png" alt="image-20241202232455919"></p>
+<h5 id="数据流图"><a href="#数据流图" class="headerlink" title="数据流图"></a>数据流图</h5><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241202233433669.png" alt="image-20241202233433669"></p>
+<p>面向对象三大特征：封装性，继承性，多态性</p>
+<p>三大类十种图：</p>
+<p>用例模型图（功能模型）：有用例图组成</p>
+<p>静态模型图（对象模型）：类图，包图，对象图，构件图，配置图</p>
+<p>动态模型图（行为模型包括交互，状态模型）：活动图，状态图，顺序图，合作图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203015125399.png" alt="image-20241203015125399"></p>
+<h4 id="用例图（小人那个）"><a href="#用例图（小人那个）" class="headerlink" title="用例图（小人那个）"></a>用例图（小人那个）</h4><p>优秀的需求文档：完备性，一致性，根据重要性和稳定性分级，可修改，可跟踪</p>
+<p>需求验证方法：评审，原型与模型，开发测试用例，用户手册编制，利用跟踪关系，自动化分析</p>
+<p>需求基线：已通过正式评审和批准的规格说明或产品，可作为进一步开发的基础，且只有通过正式的变更控制过程才能修改它</p>
+<h1 id="面向对象设计"><a href="#面向对象设计" class="headerlink" title="面向对象设计"></a>面向对象设计</h1><p>类的分类——边界类（用户界面类，系统和设备接口类），控制类，实体类、</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203001214772.png" alt="image-20241203001214772"></p>
+<p>这个是边界类，控制类则是在圆上有个箭头，实体类是圆下面有个线（像旦）</p>
+<p>类之间的关联：建立实例连接，消息传递，筛选对象间的关联</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203002015082.png" alt="image-20241203002015082"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203004155415.png" alt="image-20241203004155415"></p>
+<p>消息：从一个对象向另一个或几个其他对象发送信号，或由一个对象调用另一个对象的操作。是对象之间在一次交互中所传送的消息</p>
+<p>组成：发送者，接收者，活动</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203005326935.png" alt="image-20241203005326935"></p>
+<h5 id="顺序图"><a href="#顺序图" class="headerlink" title="顺序图"></a>顺序图</h5><p>用来描述对象间的交互行为</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203011332426.png" alt="image-20241203011332426"></p>
+<h5 id="写作图"><a href="#写作图" class="headerlink" title="写作图"></a>写作图</h5><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203011127529.png" alt="image-20241203011127529"></p>
+<h5 id="活动图"><a href="#活动图" class="headerlink" title="活动图"></a>活动图</h5><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203012149371.png" alt="image-20241203012149371"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203012504555.png" alt="image-20241203012504555"></p>
+<h5 id="状态图"><a href="#状态图" class="headerlink" title="状态图"></a>状态图</h5><p>描述系统中某些对象所具有的各种状态，和该对象从一种状态到另一种状态的转移，以及影响对象这些状态的事件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203012546984.png" alt="image-20241203012546984"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203013215393.png" alt="image-20241203013215393"></p>
+<h5 id="构建图"><a href="#构建图" class="headerlink" title="构建图"></a>构建图</h5><p>物理方面建模时要用的两种图之一，说明构件之间的逻辑实现</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203013453624.png" alt="image-20241203013453624"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203013749556.png" alt="image-20241203013749556"></p>
+<h5 id="部署图-配置图"><a href="#部署图-配置图" class="headerlink" title="部署图&#x2F;配置图"></a>部署图&#x2F;配置图</h5><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203013654574.png" alt="image-20241203013654574"></p>
+<h5 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h5><p>七种不良设计：僵硬，脆弱，低复用，高粘度，无端复杂性，无端复制，晦涩</p>
+<p>七种设计模式原则：</p>
+<ol>
+<li><p>单一职责原则SRP——一个设计元素只做一件事</p>
+</li>
+<li><p>开放-封闭原则OPC——系统中的可变性因素都封装起来</p>
+</li>
+<li><p>里氏代换（Liskov）原则LSP——一个派生类完全代替一个基类</p>
+</li>
+<li><p>依赖倒置原则DIP——改掉过程化的高层依赖低层，变成细节依赖抽象</p>
+</li>
+<li><p>接口隔离原则ISP——尽量提供小接口</p>
+</li>
+<li><p>优先使用组合而不是继承原则（合成复用原则）CRP——希望低耦合</p>
+</li>
+<li><p>迪米特原则LoD——最少知识原则</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@master/Blog/image-20241203014535715.png" alt="image-20241203014535715"></p>
+</li>
+</ol>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Stavage
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>My personal blog</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/03/09/%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6/">常用组件</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/02/25/redis%E5%90%AF%E5%8A%A8%E7%9B%B8%E5%85%B3/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/12/08/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">软件体系结构</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/12/01/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">系统分析与设计</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/26/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/14/Atcoder/">Atcoder</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/08/%E7%AE%97%E6%B3%95/">算法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2/">我的第一次博客</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2/">我的第一次博客</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/08/%E7%AE%97%E6%B3%95/">算法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/14/Atcoder/">Atcoder</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/26/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/12/01/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">系统分析与设计</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/12/08/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">软件体系结构</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/02/25/redis%E5%90%AF%E5%8A%A8%E7%9B%B8%E5%85%B3/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/03/09/%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6/">常用组件</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2024/12/01/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/12/01/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/12/01/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Tset/" style="font-size: 16.056217218030287px;" class="tag-cloud-link">Tset</a>
+    
+    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 15.395960379783427px;" class="tag-cloud-link">模板</a>
+    
+    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 9.305835502731448px;" class="tag-cloud-link">介绍</a>
+    
+    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 11.737790280748085px;" class="tag-cloud-link">笔记</a>
+    
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8/" style="font-size: 13.157446233797508px;" class="tag-cloud-link">后端常用</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/StavageKnight/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.csdn.net/m0_73635984?type=blog" target="_blank">CSDN</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Stavage Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+<script src="/js/oni.js"></script>
+
+
+
+
+</html>
