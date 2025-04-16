@@ -390,7 +390,15 @@
 <p><img src="C:\Users\X\AppData\Roaming\Typora\typora-user-images\image-20250416220920094.png" alt="image-20250416220920094"></p>
 <p>当$score_{mutaton}$的值为0时，表明测试用例集没有杀死任何一个变异程序；当$score_{mutaton}$的值为1时，表明测试用例集杀死了所有非等价的变异程序</p>
 <p><strong>等价变异体</strong>：如果对于程序P的输入域中的每一个输入，变异体M的执行结果等于P的执行结果，则认为M等价于P</p>
-<h3 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h3>
+<h3 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h3><p>系统测试是指测试整个系统以确定其是否能够提供应用的所有需求行为。包括多种测试活动，分为功能性测试和非功能性测试</p>
+<p>目的：通过与系统需求定义作比较，发现软件与系统的定义不符合或与之矛盾的地方，对计算机系统做一系列严格测试，<strong>保证系统交付给用户之后能正常使用</strong></p>
+<p>系统测试是为了发现缺陷并度量产品质量，按照系统的功能和性能需求进行的测试，一般采用黑盒测试技术，由独立的测试人员完成</p>
+<h4 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h4><p>方法：链接或界面切换测试，业务流程测试</p>
+<p><strong>业务流程测试</strong>：基于<strong>用例场景</strong>设计测试用例</p>
+<h4 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h4><p>性能测试主要检验软件是否达到需求规格说明书中规定的各类性能指标，并满足一些性能相关的约束和限制条件</p>
+<p><strong>性能测试基准</strong>：响应时间，并发用户数，吞吐量</p>
+<p><strong>性能测试策略</strong>：Flat测试（一次加载所有用户，在预定的时间段内持续运行，取<strong>相应时间和吞吐量的平均值</strong>），Ramp-up测试（用户是交错上升的，无法产生精确和可重现的平均值，但可以看出随着系统负载的改变，测试值是如何改变的，可以据此确定Flat测试的范围）</p>
+
     </div>
 </article>
 
@@ -528,12 +536,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/11/14/Atcoder/">Atcoder</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2024/11/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
                 </span>
             </li>
@@ -564,7 +566,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2025/02/25/redis%E5%90%AF%E5%8A%A8/"></a>
+                    <a href="/2025/03/09/%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6/">常用组件</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/03/30/%E9%9D%A2%E8%AF%95/">面试</a>
                 </span>
             </li>
             
@@ -603,17 +611,17 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Tset/" style="font-size: 13.124010562982143px;" class="tag-cloud-link">Tset</a>
+    <a href="/tags/Tset/" style="font-size: 16.69541678623823px;" class="tag-cloud-link">Tset</a>
     
-    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10.713701218613764px;" class="tag-cloud-link">模板</a>
+    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 13.839263173982761px;" class="tag-cloud-link">模板</a>
     
-    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 9.966357454743722px;" class="tag-cloud-link">介绍</a>
+    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 17.852291713857724px;" class="tag-cloud-link">介绍</a>
     
-    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 9.043216263929626px;" class="tag-cloud-link">笔记</a>
+    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 15.009482237752868px;" class="tag-cloud-link">笔记</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8/" style="font-size: 12.984609130185348px;" class="tag-cloud-link">后端常用</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8/" style="font-size: 14.181441451279806px;" class="tag-cloud-link">后端常用</a>
     
-    <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 10.346794564437246px;" class="tag-cloud-link">项目</a>
+    <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 9.351026593829335px;" class="tag-cloud-link">项目</a>
     
 </div>
                 
