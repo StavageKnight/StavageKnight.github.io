@@ -274,15 +274,16 @@
     <div class="content-article">
         <h3 id="一-软件测试的分类"><a href="#一-软件测试的分类" class="headerlink" title="一.软件测试的分类"></a>一.软件测试的分类</h3><p><strong>1.按测试阶段或测试步骤划分：</strong></p>
 <p>单元测试，集成测试，验收测试（Alpha测试，Beta测试），系统测试。这种划分来自于软件的开发过程，目的是验证软件开发过程各阶段的工作是否符合需求和设计要求</p>
-<p><strong>单元测试</strong></p>
+<p><strong>单元测试</strong>（依据详细设计文档和代码）</p>
 <p>在软件单元完成编码后，首先进行单元测试，验证软件单元是否正确实现了规定的功能和接口等要求</p>
-<p><strong>集成测试</strong></p>
+<p><strong>集成测试</strong>（依据概要设计文档）</p>
 <p>在确认没有问题后，将软件单元组装在一起，进行集成测试，验证软件是否满足设计需求</p>
 <p><strong>验收测试（有效性，合格性）</strong></p>
 <p>验收测试又称为有效性或合格性测试，其目的是验证软件的功能和性能及其特性是否与客户的要求一致，是否满足软件需求规格说明书的规定。按照测试的方法又有Alpha测试和Beta测试</p>
 <p>Alpha测试：在开发方的场所，用户在开发人员的指导下对软件进行测试 ，测试是受控的，开发人员负责记录错误和使用中出现的问题</p>
 <p>Beta测试：测试是由软件的最终用户在一个或多个用户场所来进行，开发人员通常不在现场，整个测试不被控制，用户记录下所有的问题，并报告给开发人员</p>
-<p><strong>系统测试</strong>：最后使通过确认测试的软件与其他系统成分（计算机硬件及相关的外围设备、数据采集和传输机构，支持软件）组合在一起，并使其在实际运行环境中运行，进行系统测试</p>
+<p><strong>系统测试</strong>（依据需求规格说明书）</p>
+<p>最后使通过确认测试的软件与其他系统成分（计算机硬件及相关的外围设备、数据采集和传输机构，支持软件）组合在一起，并使其在实际运行环境中运行，进行系统测试</p>
 <p><strong>2.按测试对象划分：</strong></p>
 <p>单元测试，配置测试，系统测试</p>
 <p><strong>3.按测试技术划分：</strong></p>
@@ -387,17 +388,108 @@
 <p>若测试<strong>用例可以强变异检测到变异体，则一定可以弱变异检测到该变异体，反之则不然</strong></p>
 <p>弱变异检测方式的优点是<strong>不需要完整执行整个变异体</strong>，即一旦相关程序实体被执行后，就立刻可以判断该变异体是否被检测到。但由于不同程序实体间存在依赖关系，对于评估测试用例集充分性来说，弱变异检测方式要弱于强变异检测方式。因此<strong>弱变异检测方式通过牺牲变异评分的精确性来提高变异测试分析的效率</strong></p>
 <p><strong>变异得分</strong>是一种评价测试用例集<strong>错误检测有效性的度量指标</strong>；其值介于0与1之间，<strong>数值越高，表明被杀死的变异程序越多，测试用例集的错误检测能力越强</strong>，反之则越低</p>
-<p><img src="C:\Users\X\AppData\Roaming\Typora\typora-user-images\image-20250416220920094.png" alt="image-20250416220920094"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@main/Blog/image-20250416220929675.png" alt="image-20250416220920094"></p>
 <p>当$score_{mutaton}$的值为0时，表明测试用例集没有杀死任何一个变异程序；当$score_{mutaton}$的值为1时，表明测试用例集杀死了所有非等价的变异程序</p>
 <p><strong>等价变异体</strong>：如果对于程序P的输入域中的每一个输入，变异体M的执行结果等于P的执行结果，则认为M等价于P</p>
 <h3 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h3><p>系统测试是指测试整个系统以确定其是否能够提供应用的所有需求行为。包括多种测试活动，分为功能性测试和非功能性测试</p>
 <p>目的：通过与系统需求定义作比较，发现软件与系统的定义不符合或与之矛盾的地方，对计算机系统做一系列严格测试，<strong>保证系统交付给用户之后能正常使用</strong></p>
-<p>系统测试是为了发现缺陷并度量产品质量，按照系统的功能和性能需求进行的测试，一般采用黑盒测试技术，由独立的测试人员完成</p>
+<p>系统测试是为了发现缺陷并度量产品质量，按照系统的功能和性能需求进行的测试，<strong>一般采用黑盒测试技术</strong>，<strong>由独立的测试人员完成</strong>，<strong>依据软件需求规格说明书</strong></p>
 <h4 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h4><p>方法：链接或界面切换测试，业务流程测试</p>
 <p><strong>业务流程测试</strong>：基于<strong>用例场景</strong>设计测试用例</p>
 <h4 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h4><p>性能测试主要检验软件是否达到需求规格说明书中规定的各类性能指标，并满足一些性能相关的约束和限制条件</p>
 <p><strong>性能测试基准</strong>：响应时间，并发用户数，吞吐量</p>
 <p><strong>性能测试策略</strong>：Flat测试（一次加载所有用户，在预定的时间段内持续运行，取<strong>相应时间和吞吐量的平均值</strong>），Ramp-up测试（用户是交错上升的，无法产生精确和可重现的平均值，但可以看出随着系统负载的改变，测试值是如何改变的，可以据此确定Flat测试的范围）</p>
+<p><strong>性能测试方法对于企业级系统</strong></p>
+<p><strong>基准法</strong>：通过科学可控的测试流程，获得系统在特定条件下一致的可再现的结果</p>
+<p><strong>容量测试</strong>：找到特定环境下性能可以达到何种程度</p>
+<p><strong>稳定性测试</strong>：使用固定数目的并发用户测试系统的总体健壮性，显示因长时间运行而出现的任何性能降低（内存泄漏，垃圾收集等）</p>
+<p><strong>峰谷测试</strong>：确定从高负载恢复到几乎空闲再攀升高负载再降低的能力</p>
+<p><strong>并发性能测试的主要指标</strong>：交易处理性能指标（交易结果，每分钟交易数，交易响应时间，虚拟并发用户数）和资源监控指标</p>
+<h4 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h4><p>指模拟巨大的工作负荷，以查看系统在峰值使用情况下是否可以正常运行</p>
+<p>压力测试是通过<strong>逐步增加系统负载</strong>来测试系统性能的变化，并<strong>最终确定在什么负载条件下系统性能处于失效状态，以此来获得系统性能</strong>提供的最大服务级别的测试</p>
+<p><strong>目标</strong>：找出最大负荷和系统瓶颈</p>
+<table>
+<thead>
+<tr>
+<th align="center">维度</th>
+<th align="center">负载测试</th>
+<th align="center">压力测试</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">主要目标</td>
+<td align="center">验证系统在预期负载下的表现</td>
+<td align="center">测试系统在超出正常负载时的极限能力和稳定性</td>
+</tr>
+<tr>
+<td align="center">负载水平</td>
+<td align="center">模拟正常或峰值负载</td>
+<td align="center">逐步增加负载直至超过系统设计容量</td>
+</tr>
+<tr>
+<td align="center">关注点</td>
+<td align="center">性能指标能否达标</td>
+<td align="center">系统在极端条件下的行为</td>
+</tr>
+<tr>
+<td align="center">终止条件</td>
+<td align="center">达到预期负载后停止</td>
+<td align="center">系统出现故障或资源耗尽</td>
+</tr>
+</tbody></table>
+<p><strong>压力测试手段</strong>：重复测试；并发测试；量级增加；随机变化</p>
+<p><strong>压力测试用例选取</strong>：磁盘空间；极端的网络负载；系统溢出</p>
+<h4 id="容量测试"><a href="#容量测试" class="headerlink" title="容量测试"></a>容量测试</h4><p>采用特定的手段测试系统能够承载处理任务的极限值所从事的测试工作</p>
+<p><strong>目的</strong>：使系统<strong>承受超额的数据容量</strong>来发现它是否能够正确处理，通过测试，预先分析出反映软件系统应用特征的某项指标的极限值（如最大并发用户数、数据库记录数等），<strong>确定系统在其极限值状态下是否还能保持主要功能正常运行</strong>，还将确定测试对象在给定时间内能够持续处理的<strong>最大负载或工作量</strong></p>
+<p><strong>容量测试和压力测试的区别</strong>：压力测试主要是使系统承受速度方面的超额负载；容量测试是数据方面的承受能力</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@main/Blog/image-20250417115843989.png" alt="image-20250417115843989"></p>
+<p><strong>首要任务</strong>：确定被测系统数据量的极限，即容量极限</p>
+<p><strong>饱和点</strong>是指所有性能指标都不满足，随后应用发生恐慌的时间点，执行<strong>容量评估的目标</strong>是保证用户知道这点在哪*，并且永远不要出现这种情况</p>
+<h4 id="安全性测试"><a href="#安全性测试" class="headerlink" title="安全性测试"></a>安全性测试</h4><p><strong>目的</strong>：发现软件系统中是否存在安全漏洞</p>
+<p>软件安全性测试包括<strong>程序、数据库</strong>安全性测试</p>
+<p>安全性一般分二个层次：<strong>应用程序级安全性，系统级别安全性</strong></p>
+<p>1.<strong>物理环境的安全性（物理层安全）</strong></p>
+<p>2.<strong>操作系统的安全性（系统层安全）</strong></p>
+<p>3.<strong>网络的安全性（网络层安全）</strong></p>
+<p>4.<strong>应用的安全性（应用层安全）</strong></p>
+<p>5.<strong>管理的安全性（管理层安全）</strong></p>
+<p>安全性测试包括：用户认证安全；系统网络安全；数据库安全；SQL注入安全；缓冲区溢出</p>
+<h3 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h3><p>集成测试是在假定各个软件单元已经通过了单元测试的前提下，检查各个软件单元之间的相互接口是否正确</p>
+<p>集成测试关注的是<strong>模块间的接口</strong>，接口之间的<strong>数据传递关系</strong>，单元组合后是否实现预计的功能</p>
+<p><strong>系统测试层次</strong>：</p>
+<p>对于传统软件而言：模块间集成测试；子系统内集成测试；子系统间集成测试</p>
+<p>对于面向对象的应用系统：类内集成测试；类间集成测试</p>
+<p><strong>集成测试过程</strong>：计划阶段；设计阶段；实施阶段；执行阶段；评估阶段</p>
+<h4 id="集成测试用例设计"><a href="#集成测试用例设计" class="headerlink" title="集成测试用例设计"></a>集成测试用例设计</h4><p>为系统运行设计：等价类划分；边界值分析；基于决策表的测试</p>
+<p>为正向测试设计：输入域测试；输出域测试；等价类划分；状态转换测试；规范导出法</p>
+<p>为逆向测试设计：错误猜测法；基于风险的测试；基于故障的测试；边界值分析；特殊值测试；状态转换测试</p>
+<p>为满足特殊需求设计：设计文档明确提出的需求</p>
+<p>为高覆盖设计用例：指功能覆盖和接口覆盖</p>
+<p>测试用例补充：因需求变更等原因的修改等补充用例</p>
+<h4 id="集成测试策略"><a href="#集成测试策略" class="headerlink" title="集成测试策略"></a>集成测试策略</h4><p>非渐增式集成，渐增式集成（自顶向下集成，自底向上集成，三明治集成）</p>
+<h3 id="验收测试"><a href="#验收测试" class="headerlink" title="验收测试"></a>验收测试</h3><p><strong>目的</strong>：确保软件准备就绪，可以让最终用户将其用于执行软件的既定功能和任务</p>
+<p><strong>常用测试</strong>：正式验收测试，Alpha测试（非正式）和Beta测试</p>
+<p>验收测试分为<strong>用户验收测试</strong>和<strong>操作验收测试</strong></p>
+<p>验收测试应该是使用<strong>黑盒方法</strong>来验证高级的<strong>系统业务需求和操作需求</strong></p>
+<p>验收测试也应该由<strong>用户代表对系统文档</strong>（如用户指南）进行测试</p>
+<h4 id="正式验收测试"><a href="#正式验收测试" class="headerlink" title="正式验收测试"></a>正式验收测试</h4><p>是系统测试的延续，计划和设计的周密和详细程度不亚于系统测试</p>
+<h3 id="回归测试"><a href="#回归测试" class="headerlink" title="回归测试"></a>回归测试</h3><p><strong>什么时候可以进行回归测试</strong>：当新功能添加到应用程序时；当有变更要求时；当缺陷修复时；当出现性能问题修复时；当环境发生变化时</p>
+<p>回归测试类型：单元回归测试；区域回归测试；全面或完整的回归测试</p>
+<p><strong>测试用例库的维护</strong>：删除过时的测试用例；改进不受控制的测试用例；删除冗余的测试用例；增添新的测试用例</p>
+<p><strong>回归测试策略</strong>：再测试全部用例；基于风险的选择测试；基于操作剖面选择测试；再测试修改部分</p>
+<h4 id="冒烟测试"><a href="#冒烟测试" class="headerlink" title="冒烟测试"></a>冒烟测试</h4><p>在进行一轮深入、严格的测试之前<strong>测试应用程序的基本和关键功能</strong>称为冒烟测试</p>
+<p>冒烟测试<strong>优点是节省测试时间</strong>，防止build失败。<strong>缺点是覆盖率还是比较低</strong></p>
+<h3 id="测试用例开发"><a href="#测试用例开发" class="headerlink" title="测试用例开发"></a>测试用例开发</h3><p>测试用例的定义是一组<strong>测试输入、执行条件和预期结果</strong>，目的是<strong>要满足一个特定的目标</strong>，比如执行一条特定的程序路径或检验是否符合一个特定的需求</p>
+<p><strong>测试用例内容</strong>：$ 测试用例 &#x3D; 输入 + 测试环境 + 输出 $ ，其中，测试目标、测试对象、测试环境、前提条件、<strong>测试数据、测试步骤和预期结果</strong>必须给出</p>
+<p><strong>测试用例设计的基本原则</strong>：测试用例的代表性，测试结果的可判断性，测试结果的可再现性</p>
+<p><strong>测试用例的评价标准</strong>：有效性；经济型；可仿效性；可修改性；独立性</p>
+<p><strong>需求跟踪矩阵类型</strong>：正向追踪；反向追踪；双向追踪</p>
+<h3 id="软件测试策略与黑盒测试"><a href="#软件测试策略与黑盒测试" class="headerlink" title="软件测试策略与黑盒测试"></a>软件测试策略与黑盒测试</h3><p><strong>灰盒测试</strong>：介于白盒测试与黑盒测试之间的测试</p>
+<p>灰盒测试关注输出对于输入的正确性，也关注内部表现。但不像白盒测试那样详细、完整，只通过一些表征性现象、事件和标志判断内部的运行状态</p>
+<h4 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h4><p>测试重点：主要针对<strong>软件界面，软件功能，外部数据库访问以及软件初始化等方面</strong>进行的测试（1）功能、性能：（2）接口：（3）检测程序初始化和终止方面的错误</p>
+<p>在集成测试、确认测试或系统测试采用黑盒测试，对于外购软件、参数化软件包及某些生成的软件（指没有源代码的软件），只能用黑盒测试方法</p>
+<p><strong>测试方法</strong>：等价类划分法；边界值分析法；因果图法；决策表法</p>
+<h4 id="等价类划分"><a href="#等价类划分" class="headerlink" title="等价类划分"></a>等价类划分</h4><p>原则：完备性；无冗余性；各子集互不相交，各子集的并集是整个集合</p>
 
     </div>
 </article>
@@ -536,6 +628,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/11/14/Atcoder/">Atcoder</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2024/11/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
                 </span>
             </li>
@@ -560,25 +658,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/12/08/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">软件体系结构</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2025/03/09/%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6/">常用组件</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2025/03/30/%E9%9D%A2%E8%AF%95/">面试</a>
+                    <a href="/2025/02/25/redis%E5%90%AF%E5%8A%A8/"></a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2025/04/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a>
+                    <a href="/2025/03/30/%E9%9D%A2%E8%AF%95/">面试</a>
                 </span>
             </li>
             
@@ -611,17 +703,17 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Tset/" style="font-size: 16.69541678623823px;" class="tag-cloud-link">Tset</a>
+    <a href="/tags/Tset/" style="font-size: 18.51417577374519px;" class="tag-cloud-link">Tset</a>
     
-    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 13.839263173982761px;" class="tag-cloud-link">模板</a>
+    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 14.876498801624464px;" class="tag-cloud-link">模板</a>
     
-    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 17.852291713857724px;" class="tag-cloud-link">介绍</a>
+    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 15.994674938427853px;" class="tag-cloud-link">介绍</a>
     
-    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 15.009482237752868px;" class="tag-cloud-link">笔记</a>
+    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 8.362088558399122px;" class="tag-cloud-link">笔记</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8/" style="font-size: 14.181441451279806px;" class="tag-cloud-link">后端常用</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8/" style="font-size: 12.074319816417127px;" class="tag-cloud-link">后端常用</a>
     
-    <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 9.351026593829335px;" class="tag-cloud-link">项目</a>
+    <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 14.650470536363333px;" class="tag-cloud-link">项目</a>
     
 </div>
                 
