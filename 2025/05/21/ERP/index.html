@@ -12,7 +12,7 @@
     
     
     
-    <title>面试 | Stavage</title>
+    <title>ERP | Stavage</title>
     <link href="http://example.com" rel="prefetch" />
 
     
@@ -225,13 +225,13 @@
         <i class="fa fa-home"></i>
         <a href="http://example.com">Stavage</a>
         >
-        <span>面试</span>
+        <span>ERP</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2025/03/30/%E9%9D%A2%E8%AF%95/">面试</a>
+                <a href="/2025/05/21/ERP/">ERP</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -239,12 +239,12 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+                <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
                 
             </span>
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2025-03-30
+                <i class="fa fa-calendar"></i> 2025-05-21
             </span>
             
         </div>
@@ -254,17 +254,17 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2025/03/30/%E9%9D%A2%E8%AF%95/">面试</a>
+                    <a href="/2025/05/21/ERP/">ERP</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2025-03-30
+                <i class="fa fa-calendar"></i> 2025-05-21
             </p>
             <p>
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+                <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
                 
                 
                 
@@ -272,8 +272,58 @@
         </center>
     </div>
     <div class="content-article">
-        <h3 id="网盘项目"><a href="#网盘项目" class="headerlink" title="网盘项目"></a>网盘项目</h3><p>采用mysql进行数据存储，redis用于数据缓存（其中包括用户空间，下载信息和邮箱验证码的缓存），使用mybatis实现动态sql，使用pagehelper实现分页查询，在文件上传中支持妙传（通过判断md5值是否存在判断文件是否存在，如果存在直接创建新的文件记录，复用已存在的文件），针对大文件使用分片上传，提高传输速度，同时采用异步合并确保不会阻塞主线程，文件上传完成后立即返回成功</p>
-
+        <p>4，5 &gt; 8 &gt; 2,6 &gt; else</p>
+<p>BOM：物料清单</p>
+<p>MPS：主生产计划</p>
+<p>RCCP：粗能力计划</p>
+<p>ERP：企业资源计划</p>
+<p>MRP：物料资源计划</p>
+<p>MRP II ：制造资源计划</p>
+<p>CRP：能力需求计划</p>
+<h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><p>五层计划</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@main/Blog/image-20250521222651292.png" alt="image-20250521222651292"></p>
+<p>经营规划-&gt;销售与运作规划-&gt;主生成计划-&gt;物料需求计划-&gt;车间作业计划及采购计划</p>
+<p>ERP是一种借助信息技术，用以规范，集成，控制，优化企业内外业务流程的解决方案</p>
+<p>在制造，分销，服务型的企业，对于用来接收客户订单，以及制造、运送以及财务结算所有需要的资源，作有效的规划和控制的一种管理方法</p>
+<p>ERP是指建立在IT基础上，通过标准化的数据和优化的业务操作流程，建立一个涵盖企业的内部资源和相关的外部资源的共享集成信息平台，实现将企业的人，财，物，产，供，销及相关的物流，信息流和资金流进行业务集成、资源优化配置和流程优化的目的，并为企业各级管理人员提供和流程优化的目的，并为企业各级管理人员提供一个有效、科学的决策管理平台</p>
+<h1 id="二"><a href="#二" class="headerlink" title="二"></a>二</h1><h4 id="MRP：物料需求计划"><a href="#MRP：物料需求计划" class="headerlink" title="MRP：物料需求计划"></a>MRP：物料需求计划</h4><h4 id="MRPII：制造资源计划"><a href="#MRPII：制造资源计划" class="headerlink" title="MRPII：制造资源计划"></a>MRPII：制造资源计划</h4><p>订货点法：订货点&#x3D;单位时段的需求量*订货提前期+安全库存量</p>
+<h6 id="基本MRP"><a href="#基本MRP" class="headerlink" title="基本MRP"></a>基本MRP</h6><p>用于库存订货计划的计算机应用系统</p>
+<p>基本思想：在需要的时候提供需要的数量</p>
+<p>基本原理：物料需求计划中考虑产品结构，并将物料需求分为独立需求与相关需求分别处理；引入时间分段确定各子物料的需求时间，保证在库存管理和生成控制中按时按量得到所需物料</p>
+<p>净需求&#x3D;毛需求 + 安全库存  - 预计库存量 - 计划接收量</p>
+<h6 id="闭环MRP"><a href="#闭环MRP" class="headerlink" title="闭环MRP"></a>闭环MRP</h6><p>闭环MRP在基本MRP的基础上，增加对投入与生成的控制，也就是对企业的能力进行校验、执行和控制</p>
+<h1 id="四-主生产计划"><a href="#四-主生产计划" class="headerlink" title="四.主生产计划"></a>四.主生产计划</h1><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@main/Blog/image-20250522153313077.png" alt="image-20250522153313077"></p>
+<p>MPS的对象是最终产品，是独立需求计划</p>
+<h1 id="五-物料需求计划"><a href="#五-物料需求计划" class="headerlink" title="五.物料需求计划"></a>五.物料需求计划</h1><p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@main/Blog/image-20250522153245338.png" alt="image-20250522153245338"></p>
+<p>也就是在MPS基础上增加了一个计算低层码</p>
+<h1 id="六"><a href="#六" class="headerlink" title="六"></a>六</h1><p>加工单：面向加工件说明物料需求计划的文件</p>
+<p>派工单：面向工作中心说明加工优先级的文件</p>
+<p><strong>JIT</strong>（省钱还高质量）</p>
+<p>三个手段：适时适量生产；弹性作业人数；质量保证</p>
+<h1 id="七"><a href="#七" class="headerlink" title="七"></a>七</h1><p>采购原则：</p>
+<p>1.参与采购；2.关注重要的部件；3.不要加速完成采购</p>
+<p>采购管理的决策方法：</p>
+<p>1.直观判断法；</p>
+<p>2.招标法；</p>
+<p>3.协商选择法</p>
+<p>4.采购成本比较法；</p>
+<p>5.ABC成本法；</p>
+<p>6.层次分析法</p>
+<p>7.供应商选择的神经网络算法</p>
+<h1 id="八"><a href="#八" class="headerlink" title="八"></a>八</h1><p>ERP系统的财务管理是集成信息的财务管理，比单一的计算机财务系统具有集成度高，信息处理及时等优点</p>
+<p>固定资产管理：是指垫付在劳动资料上的资金，包括厂房\设备等固定资产</p>
+<p>原始凭证：有关部门在经济业务发生或完成时所取得或填制的凭证，有外来凭证和自制两种</p>
+<p>记账凭证：财务部门根据原始凭证整理填制的凭证，用来确定经济业务的分录和记账的直接依据，常用三种：收款凭证、付款凭证和转账凭证</p>
+<h5 id="固定资产折旧方法"><a href="#固定资产折旧方法" class="headerlink" title="固定资产折旧方法"></a>固定资产折旧方法</h5><p>平均年限法</p>
+<p>工作量法</p>
+<p>双倍余额递减法</p>
+<p>年数综合法</p>
+<h5 id="成本管理"><a href="#成本管理" class="headerlink" title="成本管理"></a>成本管理</h5><p>成本管理是一个组织用来计划、监督和控制成本以支持管理决策和管理行为的基本流程</p>
+<p>三要素：直接人工费（直接成本），直接材料费（直接成本），制造费用（间接成本）</p>
+<h1 id="九"><a href="#九" class="headerlink" title="九"></a>九</h1><p>周期性的维修：一般维护</p>
+<p>紧急性的事故维修：工程维修</p>
+<p>维修通知单——创建工作订单——订单执行——订单完成确认——记录技术信息——成本结算</p>
+<h1 id="十一"><a href="#十一" class="headerlink" title="十一"></a>十一</h1>
     </div>
 </article>
 
@@ -417,12 +467,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/11/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2024/11/26/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
                 </span>
             </li>
@@ -435,25 +479,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+                    <a href="/2025/03/09/%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6/">常用组件</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/12/08/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">软件体系结构</a>
+                    <a href="/2025/02/25/redis%E5%90%AF%E5%8A%A8/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/03/30/%E9%9D%A2%E8%AF%95/">面试</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/04/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2025/05/07/5-7%E5%BE%97%E7%89%A9%E7%AC%94%E8%AF%95/">5.7得物笔试</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2025/05/21/ERP/">ERP</a>
                 </span>
             </li>
             
@@ -468,17 +518,17 @@
 
                 
                 <li>
-                    <a href="/2025/03/30/%E9%9D%A2%E8%AF%95/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2025/05/21/ERP/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2025/03/30/%E9%9D%A2%E8%AF%95/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2025/05/21/ERP/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2025/03/30/%E9%9D%A2%E8%AF%95/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2025/05/21/ERP/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -486,19 +536,19 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Tset/" style="font-size: 18.84510220545673px;" class="tag-cloud-link">Tset</a>
+    <a href="/tags/Tset/" style="font-size: 9.334387006111566px;" class="tag-cloud-link">Tset</a>
     
-    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 17.223491789401837px;" class="tag-cloud-link">模板</a>
+    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 18.67833444017764px;" class="tag-cloud-link">模板</a>
     
-    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 18.17586323556196px;" class="tag-cloud-link">介绍</a>
+    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 13.98480010082817px;" class="tag-cloud-link">介绍</a>
     
-    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10.609384774140493px;" class="tag-cloud-link">笔记</a>
+    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 18.95067471629679px;" class="tag-cloud-link">笔记</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8/" style="font-size: 10.471136834663007px;" class="tag-cloud-link">后端常用</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8/" style="font-size: 18.757186580276496px;" class="tag-cloud-link">后端常用</a>
     
-    <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 12.963759543236792px;" class="tag-cloud-link">项目</a>
+    <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 17.021006773649205px;" class="tag-cloud-link">项目</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 18.53608285032186px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 16.54156337983496px;" class="tag-cloud-link">学习</a>
     
 </div>
                 
