@@ -292,7 +292,53 @@
 <h1 id="Spring-框架篇"><a href="#Spring-框架篇" class="headerlink" title="Spring 框架篇"></a>Spring 框架篇</h1><h3 id="黑马系列（jdk1-8）-2"><a href="#黑马系列（jdk1-8）-2" class="headerlink" title="黑马系列（jdk1.8）"></a>黑马系列（jdk1.8）</h3><h4 id="1-Spring中单例Bean是线程安全的吗？"><a href="#1-Spring中单例Bean是线程安全的吗？" class="headerlink" title="1. Spring中单例Bean是线程安全的吗？"></a>1. Spring中单例Bean是线程安全的吗？</h4><p>并不是线程安全的，Spring框架并没有对单例Bean进行任何的多线程封装处理，但是我们通常项目中使用的SpringBean都是不可变的，所以在某种程度上Spring的单例Bean又是线程安全的</p>
 <h4 id="2-Spring-AOP是什么"><a href="#2-Spring-AOP是什么" class="headerlink" title="2. Spring AOP是什么"></a>2. Spring AOP是什么</h4><p>面向切面编程，用于将那些与业务无关，但是却对多个对象产生影响的公共行为和逻辑，抽取为公共模块进行复用，降低耦合。在网盘项目中采用AOP进行相关登录参数的校验，通过AOP中的环绕通知获取请求的方法参数信息通过与正则匹配来进行参数校验。</p>
 <h4 id="3-Spring-的事务是如何实现的"><a href="#3-Spring-的事务是如何实现的" class="headerlink" title="3. Spring 的事务是如何实现的"></a>3. Spring 的事务是如何实现的</h4><p>本质是使用AOP功能，对方法前后进行拦截，在执行方法前开启事务，在执行方法后根据执行情况提交或回滚事务</p>
-<h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4><h4 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h4><h4 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h4><h4 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h4>
+<h4 id="4-Spring事务失效场景"><a href="#4-Spring事务失效场景" class="headerlink" title="4. Spring事务失效场景"></a>4. Spring事务失效场景</h4><ol>
+<li>异常捕获到之后，没用抛出异常（手动抛出异常）</li>
+<li>事务一般只会回滚非检查异常，如果处理检查异常会失效（将roolbackFor配置改为Exception）</li>
+<li>非public方法（将方法改为public）</li>
+</ol>
+<h4 id="5-Spring的Bean生命周期？"><a href="#5-Spring的Bean生命周期？" class="headerlink" title="5. Spring的Bean生命周期？"></a>5. Spring的Bean生命周期？</h4><p>首先通过BeanDefinition获取bean的定义信息</p>
+<p>然后调用构造函数实例化bean</p>
+<p>接着bean的依赖会被注入</p>
+<p>然后会处理Aware（结尾）接口</p>
+<p>之后Bean的前置处理器BeanPostProcessor</p>
+<p>然后初始化方法（InitializingBean）</p>
+<p>之后Bean的后置处理器BeanPostProcessor</p>
+<p>最后执行销毁</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StavageKnight/Blog_picture@main/Blog/image-20260306165454316.png" alt="image-20260306165454316"></p>
+<h4 id="6-Spring中的循环依赖"><a href="#6-Spring中的循环依赖" class="headerlink" title="6. Spring中的循环依赖"></a>6. Spring中的循环依赖</h4><p>循环依赖也叫循环引用，就是两个或两个以上的Bean相互持有对方，最终形成闭环，a依赖b，b又依赖a</p>
+<p>Spring是允许循环依赖的，同时它通过三级缓存解决了大部分的循环依赖</p>
+<p>一级缓存：单例池，缓存的经历完整生命周期，完成初始化的Bean对象</p>
+<p>二级缓存：缓存还有没走完生命周期的对象</p>
+<p>三级缓存：缓存ObjectFactory，表示对象工程，用来创建某个对象</p>
+<h4 id="7-构造方法出现循环依赖怎么办？"><a href="#7-构造方法出现循环依赖怎么办？" class="headerlink" title="7. 构造方法出现循环依赖怎么办？"></a>7. 构造方法出现循环依赖怎么办？</h4><p>因为构造函数是bean生命周期的第一个流程无法采用三级缓存解决，使用@Lazy注解进行懒加载，等到需要的时候才进行bean对象的创建 </p>
+<h4 id="8-Spring-MVC流程（接口开发，前后端分离）"><a href="#8-Spring-MVC流程（接口开发，前后端分离）" class="headerlink" title="8. Spring MVC流程（接口开发，前后端分离）"></a>8. Spring MVC流程（接口开发，前后端分离）</h4><ol>
+<li>用户发送请求到前端控制器DispatcherSerlvet</li>
+<li>DispatcherSerlvet收到请求调用HandlerMapping（处理器映射器）</li>
+<li>HandlerMapping找到具体的处理器，生成处理器对象及处理拦截器（如果有），再一起返回给DispatcherSerlvet</li>
+<li>DispatcherSerlvet调用HandlerAdapter（处理器适配器）</li>
+<li>HandlerAdapter经过适配调用调用具体的处理器（Handler&#x2F;Controller）</li>
+<li>在方法上添加@ResponseBody</li>
+<li>通过HttpMessageConverter来将返回结果转为JSON并响应</li>
+</ol>
+<h4 id="9-Spring-Boot自动配置原理？"><a href="#9-Spring-Boot自动配置原理？" class="headerlink" title="9. Spring Boot自动配置原理？"></a>9. Spring Boot自动配置原理？</h4><p>Spring有一个@SpringBootApplication注解，它包含@EnableConfiguration，@SpringBootConfiguration和@ComponentScan，其中@EnableConfiguration是自动化配置的核心注解，它通过@import注解导入相应的配置选择器。会读取META-INF&#x2F;spring.factories文件中所配置的类，这些类中所定义的Bean会根据条件注释所指定的条件来决定是否注入，条件判断会有@CondtionalOnClass这样的注解，判断是否有对应的class，如果有则加载类并注入Bean中</p>
+<h4 id="10-常见注解"><a href="#10-常见注解" class="headerlink" title="10. 常见注解"></a>10. 常见注解</h4><p>Spring：@Controller，@Serive，@Component在类上实例化Bean，@Autowired根据依赖进行注入，@Configuration配置类，@Bean在方法上，标准需要注入Spring容器中，@Aspect，@pointcut（AOP）</p>
+<p>SoringMVC：@RequestMapping（请求），@RequestBody接收JSON数据并转化为Java对象，@RequestParam指定请求参数名称，@PathViriable获取请求路径中的参数，@ResponseBody将controller方法的返回值转为JSON对象相应给客户端，@RequestHeader获取请求头数据</p>
+<p>SpringBoot：@EnableConfiguratio，@SpringBootConfiguration，@ComponentScan</p>
+<h4 id="11-MyBatis执行流程"><a href="#11-MyBatis执行流程" class="headerlink" title="11. MyBatis执行流程"></a>11. MyBatis执行流程</h4><ol>
+<li>读取MyBatis的配置文件</li>
+<li>构造会话工厂SqlSessionFactory</li>
+<li>会话工厂创建SqlSession对象（包含执行SQL语句的所有方法）</li>
+<li>操作数据库接口，Executor执行器，同时负责查询缓存的维护</li>
+<li>Executor接口的执行方法中有一个MappedStatement类型的参数，封装了映射信息</li>
+<li>输入参数映射给数据库</li>
+<li>输出结果映射给Spring</li>
+</ol>
+<h4 id="12-MyBatis延迟加载使用及原理？"><a href="#12-MyBatis延迟加载使用及原理？" class="headerlink" title="12. MyBatis延迟加载使用及原理？"></a>12. MyBatis延迟加载使用及原理？</h4><p>延迟加载就是只有在需要数据时才进行加载，默认关闭，需要在配置文件中修改</p>
+<p>其底层原理是使用CGLIB代理方式创建代理对象，调用目标方法时，进入拦截器invoke方法，发现目标是null值就会执行sql，获取到数据后，会调用set方法设置属性值，再继续查询目标方法</p>
+<h4 id="13-MyBatis一级、二级缓存"><a href="#13-MyBatis一级、二级缓存" class="headerlink" title="13. MyBatis一级、二级缓存"></a>13. MyBatis一级、二级缓存</h4><p>一级缓存：基于PerpetualCache的HashMap的本地缓存，作用域是Session，当Session进行flush或close之后，在该Session中的Cache会被清空，默认打开</p>
+<p>二级缓存：同样是基于PerpetualCache的HashMap的本地缓存，但作用域是基于namespace和mapper的，默认关闭，需要在配置文件中和mapper映射文件中同时修改开启，当任意一个作用域执行增删改操作后，会清楚所有缓存</p>
+
     </div>
 </article>
 
@@ -418,12 +464,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/11/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2/">我的第一次博客</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2024/11/14/Atcoder/">Atcoder</a>
                 </span>
             </li>
@@ -436,7 +476,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+                    <a href="/2024/11/26/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/12/01/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">系统分析与设计</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/12/08/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">软件体系结构</a>
                 </span>
             </li>
             
@@ -448,13 +500,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2025/02/25/redis%E5%90%AF%E5%8A%A8/"></a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2025/03/30/%E9%9D%A2%E8%AF%95/">面试</a>
+                    <a href="/2025/04/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a>
                 </span>
             </li>
             
@@ -505,19 +551,19 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Tset/" style="font-size: 9.24171960231478px;" class="tag-cloud-link">Tset</a>
+    <a href="/tags/Tset/" style="font-size: 10.888939555135561px;" class="tag-cloud-link">Tset</a>
     
-    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 12.693203577080986px;" class="tag-cloud-link">模板</a>
+    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 17.28662116165033px;" class="tag-cloud-link">模板</a>
     
-    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 10.94240796930674px;" class="tag-cloud-link">介绍</a>
+    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 13.591193510110454px;" class="tag-cloud-link">介绍</a>
     
-    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 19.916347471589788px;" class="tag-cloud-link">笔记</a>
+    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 13.998200140932909px;" class="tag-cloud-link">笔记</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8/" style="font-size: 19.64230092245833px;" class="tag-cloud-link">后端常用</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8/" style="font-size: 17.928709302997284px;" class="tag-cloud-link">后端常用</a>
     
-    <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 9.650202483107858px;" class="tag-cloud-link">项目</a>
+    <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 8.852318395437646px;" class="tag-cloud-link">项目</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 19.959054672848463px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 16.363026787702964px;" class="tag-cloud-link">学习</a>
     
 </div>
                 
