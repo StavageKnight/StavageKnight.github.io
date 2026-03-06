@@ -12,7 +12,7 @@
     
     
     
-    <title>categories | Stavage</title>
+    <title>Java八股 | Stavage</title>
     <link href="http://example.com" rel="prefetch" />
 
     
@@ -219,21 +219,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <!-- 搜索页面(尽可能接近ZanBlog搜索功能) -->
-
-
+                    
 <article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">Stavage</a>
+        >
+        <span>Java八股</span>
+    </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/categories/index.html">categories</a>
+                <a href="/2025/04/17/Java%E5%85%AB%E8%82%A1/">Java八股</a>
             </h1>
         </div>
         <div class="tag-article">
+            
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2024-11-08
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                
             </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2025-04-17
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -241,19 +254,47 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/categories/index.html">categories</a>
+                    <a href="/2025/04/17/Java%E5%85%AB%E8%82%A1/">Java八股</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2024-11-08
+                <i class="fa fa-calendar"></i> 2025-04-17
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                
+                
+                
             </p>
         </center>
     </div>
     <div class="content-article">
-        
+        <p>[TOC]</p>
+<h1 id="Redis篇"><a href="#Redis篇" class="headerlink" title="Redis篇"></a>Redis篇</h1><h3 id="黑马系列（jdk1-8）"><a href="#黑马系列（jdk1-8）" class="headerlink" title="黑马系列（jdk1.8）"></a>黑马系列（jdk1.8）</h3><h4 id="1-缓存穿透？解决方法"><a href="#1-缓存穿透？解决方法" class="headerlink" title="1. 缓存穿透？解决方法"></a>1. 缓存穿透？解决方法</h4><h2 id="集合篇"><a href="#集合篇" class="headerlink" title="集合篇"></a>集合篇</h2><h3 id="黑马系列（jdk1-8）-1"><a href="#黑马系列（jdk1-8）-1" class="headerlink" title="黑马系列（jdk1.8）"></a>黑马系列（jdk1.8）</h3><h4 id="1-数组地址为什么从0开始"><a href="#1-数组地址为什么从0开始" class="headerlink" title="1. 数组地址为什么从0开始"></a>1. 数组地址为什么从0开始</h4><h4 id="2-ArrayList底层实现"><a href="#2-ArrayList底层实现" class="headerlink" title="2. ArrayList底层实现"></a>2. ArrayList底层实现</h4><p>基于动态数组，初始大小为0，当第一个数据插入后大小会变成10，当插入数据量超过10后会触发扩容机制，容量变为原来的1.5倍</p>
+<h4 id="3-ArrayList扩容机制"><a href="#3-ArrayList扩容机制" class="headerlink" title="3. ArrayList扩容机制"></a>3. ArrayList扩容机制</h4><h4 id="4-数组和List之间的转换"><a href="#4-数组和List之间的转换" class="headerlink" title="4. 数组和List之间的转换"></a>4. 数组和List之间的转换</h4><p>数组转List可以使用Arrays.toList方法，但是这个方法使用的是引用方法，原数组改变会影响List集合</p>
+<p>List转数组可以使用List中的toArray()方法，这个方法是新建数组，不会影响数据</p>
+<h4 id="5-ArrayList和LinkedList区别"><a href="#5-ArrayList和LinkedList区别" class="headerlink" title="5. ArrayList和LinkedList区别"></a>5. ArrayList和LinkedList区别</h4><p>底层：ArrayList使用的是动态数组，而LinkedList使用的是双向链表</p>
+<p>线程：两者都是线程不安全的，一般在方法内部创建或使用syn锁</p>
+<p>空间：相对而讲LinkedList更加占用空间</p>
+<p>效率：ArrayList在明确数据下标时是O(1)的，其他情况与LinkedList相同</p>
+<h4 id="6-HashMap实现原理"><a href="#6-HashMap实现原理" class="headerlink" title="6. HashMap实现原理"></a>6. HashMap实现原理</h4><p>基于数组+链表&#x2F;红黑树方式，当插入数据时采用通过计算key的hash来确定下标，如果key值相同则替换原来的值，否则存入链表或红黑树中（只有当链表长度大于阈值（一般为8）且数组长度大于64时会将链表转为红黑树，小于时会退化为链表）</p>
+<h4 id="7-HashMap在jdk1-8之前和jdk1-8有什么区别"><a href="#7-HashMap在jdk1-8之前和jdk1-8有什么区别" class="headerlink" title="7. HashMap在jdk1.8之前和jdk1.8有什么区别"></a>7. HashMap在jdk1.8之前和jdk1.8有什么区别</h4><p>在jdk1.8之前采用的时数组+链表，在jdk1.8开始引入了红黑树机制</p>
+<h4 id="8-HashMap的put方法流程"><a href="#8-HashMap的put方法流程" class="headerlink" title="8. HashMap的put方法流程"></a>8. HashMap的put方法流程</h4><p>第一次插入数据会创建初始大小16，然后计算key的hash值确定下标插入，之后插入数据同样通过key的hash确定下标然后判断是否为null，如果为null直接插入，否则判断key值是否相等如果相等直接覆盖原value；</p>
+<p>如果不相等，如果存储的是红黑树则直接插入或覆盖，如果是链表则需要遍历，如果有这个key则进行覆盖，没有就进行插入操作，然后判断链表大小判断是否转为红黑树；</p>
+<p>最后判断HashMap大小是否超过了阈值，是否要进行扩容操作</p>
+<h4 id="9-HashMap的扩容机制"><a href="#9-HashMap的扩容机制" class="headerlink" title="9. HashMap的扩容机制"></a>9. HashMap的扩容机制</h4><p>在初始化和插入数据时都是调用resize方法进行扩容的，初始长度默认16，负载因子0.75，当数组长度到达长度*0.75时触发扩容机制；首先将大小扩大为原来的2倍，扩容后会创建新数组，会将就数组的数据挪到新数组中；</p>
+<p>当没有哈希冲突时会通过（hash &amp; (newCap - 1)）计算新的下标，出现哈希冲突如果此时时红黑树则直接通过红黑树的方法添加；</p>
+<p>如果此时是链表则会计算（hash &amp; oldCap）是否为0，如果非0则会转移到原数组位置+增加数组大小的位置上，如果是0则停留在原位置</p>
+<h4 id="10-HashMap的寻址算法"><a href="#10-HashMap的寻址算法" class="headerlink" title="10. HashMap的寻址算法"></a>10. HashMap的寻址算法</h4><p>计算hashCode，然后进行计算二次哈希，通过二次哈希值 位与 hashCode &gt;&gt; 16来最终确定哈希值让哈希分布更加均匀，最后通过（数组大小 - 1） &amp; hash确定索引</p>
+<h1 id="Spring-框架篇"><a href="#Spring-框架篇" class="headerlink" title="Spring 框架篇"></a>Spring 框架篇</h1><h3 id="黑马系列（jdk1-8）-2"><a href="#黑马系列（jdk1-8）-2" class="headerlink" title="黑马系列（jdk1.8）"></a>黑马系列（jdk1.8）</h3><h4 id="1-Spring中单例Bean是线程安全的吗？"><a href="#1-Spring中单例Bean是线程安全的吗？" class="headerlink" title="1. Spring中单例Bean是线程安全的吗？"></a>1. Spring中单例Bean是线程安全的吗？</h4><p>并不是线程安全的，Spring框架并没有对单例Bean进行任何的多线程封装处理，但是我们通常项目中使用的SpringBean都是不可变的，所以在某种程度上Spring的单例Bean又是线程安全的</p>
+<h4 id="2-Spring-AOP是什么"><a href="#2-Spring-AOP是什么" class="headerlink" title="2. Spring AOP是什么"></a>2. Spring AOP是什么</h4><p>面向切面编程，用于将那些与业务无关，但是却对多个对象产生影响的公共行为和逻辑，抽取为公共模块进行复用，降低耦合。在网盘项目中采用AOP进行相关登录参数的校验，通过AOP中的环绕通知获取请求的方法参数信息通过与正则匹配来进行参数校验。</p>
+<h4 id="3-Spring-的事务是如何实现的"><a href="#3-Spring-的事务是如何实现的" class="headerlink" title="3. Spring 的事务是如何实现的"></a>3. Spring 的事务是如何实现的</h4><p>本质是使用AOP功能，对方法前后进行拦截，在执行方法前开启事务，在执行方法后根据执行情况提交或回滚事务</p>
+<h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4><h4 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h4><h4 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h4><h4 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h4>
     </div>
 </article>
-
 
 
                 </div>
@@ -383,12 +424,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/11/08/%E7%AE%97%E6%B3%95/">算法</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2024/11/14/Atcoder/">Atcoder</a>
                 </span>
             </li>
@@ -401,7 +436,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/12/08/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">软件体系结构</a>
+                    <a href="/2024/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
                 </span>
             </li>
             
@@ -419,7 +454,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2025/04/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a>
+                    <a href="/2025/03/30/%E9%9D%A2%E8%AF%95/">面试</a>
                 </span>
             </li>
             
@@ -431,7 +466,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2025/06/19/%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA/">本地数据创建</a>
+                    <a href="/2025/05/21/ERP/">ERP</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/06/24/git%E4%BD%BF%E7%94%A8/">git使用</a>
                 </span>
             </li>
             
@@ -446,17 +487,17 @@
 
                 
                 <li>
-                    <a href="/categories/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2025/04/17/Java%E5%85%AB%E8%82%A1/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2025/04/17/Java%E5%85%AB%E8%82%A1/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2025/04/17/Java%E5%85%AB%E8%82%A1/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -464,19 +505,19 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Tset/" style="font-size: 13.138643619405293px;" class="tag-cloud-link">Tset</a>
+    <a href="/tags/Tset/" style="font-size: 9.24171960231478px;" class="tag-cloud-link">Tset</a>
     
-    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 18.712153470558423px;" class="tag-cloud-link">模板</a>
+    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 12.693203577080986px;" class="tag-cloud-link">模板</a>
     
-    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 19.926603984802128px;" class="tag-cloud-link">介绍</a>
+    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 10.94240796930674px;" class="tag-cloud-link">介绍</a>
     
-    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 16.83736464994492px;" class="tag-cloud-link">笔记</a>
+    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 19.916347471589788px;" class="tag-cloud-link">笔记</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8/" style="font-size: 17.13799214418469px;" class="tag-cloud-link">后端常用</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8/" style="font-size: 19.64230092245833px;" class="tag-cloud-link">后端常用</a>
     
-    <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 11.716147220841759px;" class="tag-cloud-link">项目</a>
+    <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 9.650202483107858px;" class="tag-cloud-link">项目</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 14.587841517684097px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 19.959054672848463px;" class="tag-cloud-link">学习</a>
     
 </div>
                 
