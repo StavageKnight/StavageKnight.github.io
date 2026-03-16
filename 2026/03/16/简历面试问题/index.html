@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Stavage">
+    
+    <meta name="description" content="My personal blog">
+    
+    
+    
+    
+    
+    
+    <title>Stavage</title>
+    <link href="http://example.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="http://example.com" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://example.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">Stavage</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E6%AF%94%E8%B5%9B/">比赛</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AE%9E%E7%94%A8/">实用</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/categories">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Tset/">Tset</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E6%A8%A1%E6%9D%BF/">模板</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E4%BB%8B%E7%BB%8D/">介绍</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">Stavage</a>
+        >
+        <span></span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2026/03/16/%E7%AE%80%E5%8E%86%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/"></a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2026-03-16
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2026/03/16/%E7%AE%80%E5%8E%86%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/"></a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2026-03-16
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="实习"><a href="#实习" class="headerlink" title="实习"></a>实习</h1><h4 id="你在东软做的融资模块中整个业务流程是什么"><a href="#你在东软做的融资模块中整个业务流程是什么" class="headerlink" title="你在东软做的融资模块中整个业务流程是什么"></a><strong>你在东软做的融资模块中整个业务流程是什么</strong></h4><p>整体的业务流程主要是，融资申请 &gt; 风险校验 &gt; 审批流程 &gt; 放款处理</p>
+<p>首先就是用户在前端输入相关信息，比如：融资金额，融资用途，企业信息等。然后后端接收数据，会在Controller层先做数据校验，像金额范围，企业信息完整性这些，然后会在融资申请表中生成一条申请记录，状态记为“待审核”</p>
+<p>然后系统会根据企业已有的额度去做校验，判断剩余额度是否足够。这个部分我主要负责的是多表关联的SQL，比如企业信息表，融资申请表还有企业额度表的联合查询，同时通过索引优化减少查询的时间</p>
+<p>第三步就是我们的流程审批，当额度校验通过之后，系统会进入到审批阶段，由人工审核，审批操作会更新融资申请状态。这里系统中使用了消息队列做解耦操作，在审批通过之后会发送一条融资审批通过的消息，让下游模块去处理后续流程，而不是在一个接口里同步完成所有逻辑</p>
+<p>最后呢，审批通过的消息会被放款服务消费，然后执行放款逻辑，更新融资申请状态为已放款，生成放款记录，同时更新企业额度，放款完成后系统会再发送一条状态通知信息，用于通知客户端融资成功的通知</p>
+<h4 id="你设计了哪些表"><a href="#你设计了哪些表" class="headerlink" title="你设计了哪些表"></a>你设计了哪些表</h4><p>主要有融资申请表（申请ID，企业ID，申请融资金额，融资用途，状态，创建时间，修改时间），企业额度表（企业ID，总额度，已使用额度，剩余额度，信用等级），审批记录表（融资申请ID，审批人，审批结果，审批意见，审批时间），放款记录表（融资申请ID，放款金额，放款状态，放款时间）</p>
+<h4 id="融资申请金额如何保证不超过额度"><a href="#融资申请金额如何保证不超过额度" class="headerlink" title="融资申请金额如何保证不超过额度"></a>融资申请金额如何保证不超过额度</h4><p>主要是通过企业ID查询企业额度表，拿到总额度和已用额度后计算当前可用额度，如果不够直接拒接。同时考虑到并发，在审批通过，对额度进行查询修改时，使用行锁，锁住这条企业额度记录，然后再次判断额度是否够用，够的话更新已用额度，保证同一时刻只有一个事务在扣减额度</p>
+<h4 id="你的简历中写到编写多表关联SQL查询语句，同时优化索引与查询逻辑，提升融资数据查询效率，那么你优化的-SQL-是什么？你加了什么索引？"><a href="#你的简历中写到编写多表关联SQL查询语句，同时优化索引与查询逻辑，提升融资数据查询效率，那么你优化的-SQL-是什么？你加了什么索引？" class="headerlink" title="你的简历中写到编写多表关联SQL查询语句，同时优化索引与查询逻辑，提升融资数据查询效率，那么你优化的 SQL 是什么？你加了什么索引？"></a>你的简历中写到编写多表关联SQL查询语句，同时优化索引与查询逻辑，提升融资数据查询效率，那么你优化的 SQL 是什么？你加了什么索引？</h4><p>当时我负责的不是特别复杂的SQL，而是审批列表查询这类SQL。比如查询从<strong>融资申请表，企业信息表还有企业额度表</strong>中查询相关信息，我主要做了三类优化吧。第一类就是给常见的过滤条件加索引，比如状态，创建时间等，所以我加了</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">finance_apply(status, create_time)</span><br></pre></td></tr></table></figure>
+
+<p>这类联合索引；第二类就是给多表join中的关键列增加索引，如果这个字段非主键就会增加索引，比如企业额度表中的企业信息ID；第三类就是采用子查询，先限制某些信息把从融资申请表中查询的结果集缩小之后在进行join联表</p>
+<h4 id="增加索引时，为什么给主过滤条件加联合索引？"><a href="#增加索引时，为什么给主过滤条件加联合索引？" class="headerlink" title="增加索引时，为什么给主过滤条件加联合索引？"></a>增加索引时，为什么给主过滤条件加联合索引？</h4><p>主要是因为过滤条件一般是联合出现的，如果只加单列索引一般不能很好利用索引；再加上一般都涉及到排序，使用联合索引可以同时优化过滤+排序，同时也能减少回表次数。</p>
+<h1 id="项目一：智能旅游规划小帮手"><a href="#项目一：智能旅游规划小帮手" class="headerlink" title="项目一：智能旅游规划小帮手"></a>项目一：智能旅游规划小帮手</h1><h4 id="整体架构"><a href="#整体架构" class="headerlink" title="整体架构"></a>整体架构</h4><p>当时是按照前端交互层+Spring Boot后端服务层 + AI Agent编排层 +外部工具层 + 记忆&#x2F;知识库层设计的。最外层是前端交互层，负责将用户输入的需求发到后端；然后是业务服务层，主要负责接口承接、参数处理、会话管理、任务调度这些后端能力。比如接收用户请求、组织prompt、调用AI服务、记录会话等；AI Agent编排层负责把用户的自然语言请求转换成模型可理解的上下文，并决定什么时候走RAG检索，什么时候调用工具；还有记忆层，采用Spring AI的MessageChatMemoryAdvisor保持上下文，同时我自己实现了基于文件系统 + Kryo序列化的ChatMemory持久化机制，也就是说，用户不是一次性问答，而是可以连续追问，比如前面说“预算 2000”，后面再说“那第二天安排轻松一点”，系统还能记住之前的上下文</p>
+<p>接着是 知识库 &#x2F; RAG 检索层，因为旅游规划里有很多事实性内容，比如景点介绍、注意事项、城市攻略，这部分如果只靠模型生成容易不准，所以我加了向量数据库 + RAG 检索。整体流程是：先把知识内容向量化入库，用户提问后先检索相关知识片段，再把检索结果和问题一起交给模型生成答案，这样能提升准确性和专业性。</p>
+<p>然后是工具层，这个项目不只是聊天，还要“做事”，所以我接了两类工具：一类是 <strong>Search API 网页搜索工具</strong>，用来获取最新旅游信息；另一类是 <strong>MCP Client</strong> 对接百度地图 MCP，用本地 Stdio 模式接入地图能力，让 AI 能做路线规划、地点分析这类更强依赖外部能力的任务</p>
+<p>最后在执行层面，我还做了异步处理。因为模型推理和工具调用都比较耗时，所以我用了 <code>CompletableFuture</code> 去异步处理任务，避免阻塞主线程，再配合 SSE 把阶段性结果不断推给前端。这样整体响应体验会更好</p>
+<h4 id="RAG流程是什么？"><a href="#RAG流程是什么？" class="headerlink" title="RAG流程是什么？"></a>RAG流程是什么？</h4><p>RAG的流程可以概括为检索，增强，生成。对于我的项目，我先准备出旅游相关的知识，比如景点介绍、旅游攻略、注意事项等文本数据，然后通过Embedding模型将这些文本转换成向量，并存入向量数据库，同时会把文本做chunk拆分，将一段攻略拆分成几百字的小块，这样后面检索时精度会更高。然后是将用户提问向量化，将用户输入的问题通过同一个Embedding模型转化成向量；接着是向量检索，系统会拿用户问题生成的向量去向量数据库做相似度检索，找到最相关的知识片段，取Top5。然后把检索到的知识片段和用户问题一起拼接成一个新的prompt。最后把增强后端prompt给大模型，生成答案</p>
+<h4 id="为什么RAG可以减少幻觉？"><a href="#为什么RAG可以减少幻觉？" class="headerlink" title="为什么RAG可以减少幻觉？"></a>为什么RAG可以减少幻觉？</h4><p>RAG 的思路是，在模型生成之前 <strong>先检索真实知识，再把知识作为上下文给模型</strong>，这样模型回答问题时就不是凭空生成，而是基于提供的资料进行总结，具体来说有：</p>
+<p>第一，提供了真实知识作为约束，模型输入的 prompt 里会包含检索到的知识片段，比如景点介绍或旅游攻略。<br> 模型生成时会优先根据这些内容组织答案，相当于给了一个“参考资料”，减少胡编的空间</p>
+<p>第二，缩小模型的检索范围，没有 RAG 时，模型可能要在整个训练知识空间里推理。 有了 RAG 后，它主要围绕 <strong>检索到的几段文本</strong> 来回答，相当于把问题范围收窄</p>
+<p>第三，可以接入最新数据，RAG 的知识库可以随时更新，比如新增旅游攻略、景点信息，模型检索到的就是最新知识，所以不容易出现过时信息</p>
+<p>第四，可控性更强，如果发现回答不准确，可以直接更新知识库，而不需要重新训练模型</p>
+<p>在我的项目中也是这个目的，让 AI 规划行程时参考真实攻略和景点资料，而不是完全靠模型自己生成</p>
+<h4 id="对于你项目中ChatMemory实现，你写到Kryo-序列化-文件系统，为什么不用-Redis？"><a href="#对于你项目中ChatMemory实现，你写到Kryo-序列化-文件系统，为什么不用-Redis？" class="headerlink" title="对于你项目中ChatMemory实现，你写到Kryo 序列化 + 文件系统，为什么不用 Redis？"></a>对于你项目中ChatMemory实现，你写到Kryo 序列化 + 文件系统，为什么不用 Redis？</h4><p>因为这个项目当时是个人的完整项目，核心目标是把多轮对话记忆持久化先做到，而不是一上来就按高并发线上架构去堆基础设施，如果使用Redis，虽然可以做到，但是会多出一套部署、连接、序列化设计等工作。且当时选用Kryo 序列化 + 文件系统，第一是实现成本低，实现更快，文件系统天然就能做持久化，不需要额外插件，Kryo 的序列化效率也比较高；第二就是更适合会话的历史归档，Redis更适合做高速缓存，但ChatMemory这种东西我希望是一个能长期保留的对话记录，而不是临时缓存；第三就是我的项目当时不是一个高并发的生成系统，而是单体智能应用，在这个场景下，Redis 的分布式共享优势其实发挥不出来，反而文件存储更简单；还有就是采用Kryo 进行序列化是因为它比JDK原生序列化更轻更快</p>
+<h4 id="SSE-和-WebSocket-有什么区别？"><a href="#SSE-和-WebSocket-有什么区别？" class="headerlink" title="SSE 和 WebSocket 有什么区别？"></a>SSE 和 WebSocket 有什么区别？</h4><p>在通信方向上，WebSocket是全双工通信，客户端和服务端都可以随时互相发送消息；SSE是单向通信，只能是服务端主动向客户端推送数据</p>
+<p>在协议层上，WebSocket是独立协议，需要先进行Http  Upgrade 才能建立连接，SEE其实还是基于Http的，只是Content-Type是text&#x2F;event-stream，服务器不断往Http相应里写数据，所以SSE在很多场景下部署更加简单</p>
+<h4 id="为什么-AI-流式输出更适合-SSE？"><a href="#为什么-AI-流式输出更适合-SSE？" class="headerlink" title="为什么 AI 流式输出更适合 SSE？"></a>为什么 AI 流式输出更适合 SSE？</h4><p>第一，AI 推理本质是“服务器持续输出”，不需要客户端不断发消息；</p>
+<p>第二，SSE天然支持流式输出和LLM的<strong>token streaming</strong> 模式非常契合</p>
+<p>第三，SSE更容易接入现有后端架构</p>
+<h4 id="为什么用-CompletableFuture？"><a href="#为什么用-CompletableFuture？" class="headerlink" title="为什么用 CompletableFuture？"></a>为什么用 CompletableFuture？</h4><p>由于用户一发请求，主线程就一直等大模型返回、等搜索工具返回、等地图工具返回，那接口线程会被长时间占住，吞吐量会很差，用户一多就容易把 Tomcat 线程打满，所以不用普通同步调用</p>
+<p>采用CompletableFuture的原因主要有：可以异步执行耗时任务；更适合做任务编排；异常处理更方便，可以在<code>exceptionally()</code>、<code>handle()</code> 这种链路里统一处理</p>
+<h4 id="线程池用什么？"><a href="#线程池用什么？" class="headerlink" title="线程池用什么？"></a>线程池用什么？</h4><p>我使用的是自定义 ThreadPoolExecutor，而不是直接用公共线程池，这样更利于隔离、调优和稳定性</p>
+<h1 id="项目二：农销通"><a href="#项目二：农销通" class="headerlink" title="项目二：农销通"></a>项目二：农销通</h1><h4 id="你的系统拆了哪些服务？"><a href="#你的系统拆了哪些服务？" class="headerlink" title="你的系统拆了哪些服务？"></a>你的系统拆了哪些服务？</h4><p>有用户与认证服务，订单服务，融资服务，专家咨询和技术指导服务，农业知识共享服务，网关服务</p>
+<h4 id="Gateway-的作用是什么？"><a href="#Gateway-的作用是什么？" class="headerlink" title="Gateway 的作用是什么？"></a>Gateway 的作用是什么？</h4><p><strong>Gateway 主要承担的是整个微服务系统的统一入口和流量控制中心</strong>。所有前端请求都会先经过 Gateway，再由 Gateway 转发到具体的微服务。具体来说，首先是同一入口和路由转发，在前端访问时只需要访问一个入口，Gateway 根据路由规则把请求转发到对应服务，同时服务地址是通过 <strong>Nacos 注册中心</strong>动态发现的，不需要写死。这样即使服务变更，前端也不需要修改；其次是统一的认证和安全控制，Gateway 会在进入微服务之前先做一次token校验，无效会直接拦截，这样各个业务之间不需要重复写认证逻辑，系统的安全策略可以统一的管理；最后就是限流和保护后端服务，如果某些接口访问量特别大，可以在Gateway做限流，防止流量直接冲击后端服务提高系统稳定性</p>
+<h5 id="Nacos-是干什么的？"><a href="#Nacos-是干什么的？" class="headerlink" title="Nacos 是干什么的？"></a>Nacos 是干什么的？</h5><p>一个是服务注册与发现，每个微服务启动时都会把自己的信息注册到Nacos，比如服务名，IP，端口等信息，这样在调用服务时就不需要关心具体IP，只需要根据服务名去Nacos获取实例列表</p>
+<p>第二就是服务发现，当一个服务需要调用另一个服务时，会先去Nacos拉取对应的实例列表，然后通过负载均衡选择一个实例发起调用</p>
+<h4 id="注册中心原理是什么"><a href="#注册中心原理是什么" class="headerlink" title="注册中心原理是什么"></a>注册中心原理是什么</h4><p>注册中心整体流程大概是先进行服务注册，在服务启动后，会向Nacos发送请求，Nacos会把这个实例信息存到自己的服务列表里；在注册完成后，服务实例会定期向 Nacos 发送心跳包，如果一段时间没有心跳，比如超过 15 秒，Nacos 就会认为这个实例不健康，如果超过一定时间仍然没有恢复，就会把这个实例从服务列表中剔除，这样可以避免调用到已经宕机的服务；当服务 A 需要调用服务 B 时，服务 A 向 Nacos 查询服务 B 的实例列表，获取所有可用实例，然后通过负载均衡策略选一个实例，最后发起远程调用</p>
+<h4 id="你-RabbitMQ-用在哪？"><a href="#你-RabbitMQ-用在哪？" class="headerlink" title="你 RabbitMQ 用在哪？"></a>你 RabbitMQ 用在哪？</h4><p>我主要把RabbitMQ 用在业务解耦和异步处理上，有两个应用场景；</p>
+<p>一个是订单状态通知，比如农产品交易里，订单状态会有很多变化，比如创建订单、确认收购、完成交易等。如果这些状态变化都同步通知多个模块，比如通知用户，更新统计数据，触发后续业务，这样订单服务就会和很多模块产生强耦合。所以我在订单状态变化时会发送一条订单状态变更消息到RabbitMQ，然后由不同的消费者去处理，比如通知模块、统计模块等，这样订单服务只负责发消息，不需要关心谁在消费</p>
+<p>第二个是融资审核流程的解耦，在融资模块里，当融资审批通过之后，不是直接在审批接口里同步做所有事情，而是会发送一条审批通过消息，然后由放款服务去消费这条消息执行放款逻辑，比如更新额度、生成放款记录等。这样审批模块和放款模块就解耦了，而且即使放款逻辑比较慢，也不会阻塞审批接口</p>
+<h4 id="为什么不用-Kafka？"><a href="#为什么不用-Kafka？" class="headerlink" title="为什么不用 Kafka？"></a>为什么不用 Kafka？</h4><p>RabbitMQ 更适合业务消息驱动架构，而 Kafka 更适合大规模数据流处理，所以在这个项目的业务解耦场景下我选择了 RabbitMQ</p>
+<h4 id="支付超时怎么处理？"><a href="#支付超时怎么处理？" class="headerlink" title="支付超时怎么处理？"></a>支付超时怎么处理？</h4><p>首先使用延迟消息处理超时，订单创建后状态为待支付，同时发送一条15分钟的延迟消息到 RabbitMQ， 延迟消息触发时再检查订单状态：如果仍然是 <strong>待支付</strong> → 关闭订单，如果已经 <strong>支付成功</strong> → 不处理</p>
+<p>然后使用使用状态机控制订单状态，限制待支付状态只能变成已支付或已取消状态，而 已支付的订单不能再变成已取消，避免支付成功后又被超时任务关闭</p>
+<p>最后为了保证接口幂等性，由于支付回调或MQ消息可能重复，所以更新订单时会做条件更新，只有待支付状态才可以变成已支付状态，这样即使回调多次，也只会成功一次</p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Stavage
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>My personal blog</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2026/03/16/%E7%AE%80%E5%8E%86%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2026/02/17/Java%E5%85%AB%E8%82%A1/">Java八股</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/06/24/git%E4%BD%BF%E7%94%A8/">git使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/06/19/%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA/">本地数据创建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/05/21/ERP/">ERP</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/05/07/5-7%E5%BE%97%E7%89%A9%E7%AC%94%E8%AF%95/">5.7得物笔试</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/04/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/03/09/%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6/">常用组件</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/02/25/redis%E5%90%AF%E5%8A%A8/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/12/08/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">软件体系结构</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/08/%E7%AE%97%E6%B3%95/">算法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/14/Atcoder/">Atcoder</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/26/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/12/01/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">系统分析与设计</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/02/25/redis%E5%90%AF%E5%8A%A8/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/04/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2025/06/24/git%E4%BD%BF%E7%94%A8/">git使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2026/02/17/Java%E5%85%AB%E8%82%A1/">Java八股</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2026/03/16/%E7%AE%80%E5%8E%86%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/"></a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2026/03/16/%E7%AE%80%E5%8E%86%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2026/03/16/%E7%AE%80%E5%8E%86%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2026/03/16/%E7%AE%80%E5%8E%86%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Tset/" style="font-size: 12.789564568340936px;" class="tag-cloud-link">Tset</a>
+    
+    <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 16.442167375491778px;" class="tag-cloud-link">模板</a>
+    
+    <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 14.839551828047064px;" class="tag-cloud-link">介绍</a>
+    
+    <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10.920759832936064px;" class="tag-cloud-link">笔记</a>
+    
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%B8%B8%E7%94%A8/" style="font-size: 17.95355246185104px;" class="tag-cloud-link">后端常用</a>
+    
+    <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 17.30344606404506px;" class="tag-cloud-link">项目</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 13.27070720329834px;" class="tag-cloud-link">学习</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/StavageKnight/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.csdn.net/m0_73635984?type=blog" target="_blank">CSDN</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Stavage Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+<script src="/js/oni.js"></script>
+
+
+
+
+</html>
